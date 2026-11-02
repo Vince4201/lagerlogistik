@@ -1,7 +1,21 @@
 # Lagerverwaltung
 
-Terminal-Lagerverwaltung in Java 21 mit SQLite. Fachliche Regeln, Bedienung und Aufbau des Codes
-stehen in [KONZEPT.md](KONZEPT.md). Starten mit `./lager.sh`, das bei Bedarf vorher mit Maven baut.
+Terminal-Lagerverwaltung in Java 21 mit SQLite. Starten mit `./lager.sh`, das bei Bedarf vorher
+mit Maven baut.
+
+## Dokumentenkette
+
+Die Dokumentation besteht aus drei Dateien, die aufeinander aufbauen:
+
+1. [anforderungen.md](anforderungen.md): was das Programm leisten soll, ohne Technik.
+2. [datenmodell-und-ablaeufe.md](datenmodell-und-ablaeufe.md): wie die Anforderungen in Daten und
+   Abläufe übersetzt werden.
+3. [spezifikation.md](spezifikation.md): wie das Programm technisch gebaut ist, genau genug zum
+   Umsetzen und Prüfen.
+
+Änderungen laufen die Kette entlang: erst die Anforderung, dann Datenmodell und Abläufe, dann die
+Spezifikation, zuletzt der Code. Ein späteres Dokument widerspricht nie einem früheren. Eine
+zusammenfassende KONZEPT.md gibt es nicht mehr.
 
 ## Git ist das Gedächtnis des Projekts
 
@@ -21,7 +35,7 @@ deshalb in der Git-Historie und nirgendwo sonst.
   Fehler durchlaufen.
 - Commit-Nachrichten auf Deutsch. Erste Zeile kurz: was geändert wurde. Darunter: warum, welche
   Entscheidung getroffen wurde, was verworfen wurde, was noch offen ist. Diesen Teil braucht man später.
-- Ändert sich das fachliche Verhalten, wird KONZEPT.md im selben Commit angepasst.
+- Ändert sich das Verhalten, werden die betroffenen Dokumente der Kette im selben Commit angepasst.
 - Experimente gehören auf einen eigenen Branch, nicht auf `main`.
 
 **Nachschlagen**
