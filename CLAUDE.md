@@ -14,8 +14,9 @@ Jeder Schritt hat ein eigenes Dokument, jedes baut auf dem vorigen auf:
 3. [spezifikation.md](spezifikation.md): die Bauanleitung. Welche Befehle es gibt, was jeder Befehl
    prüft, was er verändert und was er ausgibt.
 4. Implementierung: der Quelltext unter `src/`.
-5. Test: Prüfungen, die zeigen, dass die Implementierung die Anforderungen erfüllt. Automatische
-   Tests gibt es noch nicht, bisher nur den Prüflauf mit `beispieldaten.txt`.
+5. Test: JUnit-Tests unter `src/test/`. Jede Anforderung hat mindestens einen Test, dessen Name mit
+   ihrer Nummer beginnt, z. B. `@DisplayName("A14 …")`. Kommt eine Anforderung dazu, kommt ihr Test
+   dazu.
 
 Änderungen laufen die Kette entlang: erst die Anforderung, dann Datenmodell und Abläufe, dann die
 Spezifikation, zuletzt Code und Test. Ein späteres Glied widerspricht nie einem früheren. Eine
@@ -52,9 +53,10 @@ deshalb in der Git-Historie und nirgendwo sonst.
 
 - Unter der ersten Zeile steht, warum: welche Entscheidung getroffen wurde, was verworfen wurde,
   was noch offen ist. Diesen Teil braucht man später.
-- Vor jedem `Code:`-Commit den Prüflauf ausführen und das Ergebnis in die Commit-Nachricht
-  schreiben: `rm -f test.db && ./lager.sh test.db < beispieldaten.txt` muss ohne Fehler
-  durchlaufen. Ein Fehlschlag blockiert den Commit nicht, muss aber in der Nachricht stehen.
+- Vor jedem `Code:`- und `Test:`-Commit prüfen und das Ergebnis in die Commit-Nachricht schreiben:
+  `mvn -q -B test` (alle Tests grün) und `rm -f test.db && ./lager.sh test.db < beispieldaten.txt`
+  (läuft ohne Fehler durch). Ein Fehlschlag blockiert den Commit nicht, muss aber in der Nachricht
+  stehen.
 - Ändert sich das Verhalten, werden die betroffenen Glieder der Kette im selben Zug angepasst.
 - Am Ende der Sitzung ein Abschluss-Commit für alles, was noch nicht erfasst ist, damit der Ordner
   sauber ist. Ist schon alles committet, entfällt er.

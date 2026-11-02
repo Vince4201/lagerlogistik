@@ -272,7 +272,24 @@ von 0 bis 8 eingeben.“
 
 ## Prüfen
 
-Automatische Tests gibt es noch nicht. `beispieldaten.txt` enthält die Eingaben für einen kompletten
+**Automatische Tests** (JUnit 6, unter `src/test/java`). Jeder Test beginnt im Namen mit der Nummer
+der Anforderung, die er prüft. Jeder Test arbeitet auf einer eigenen, frischen Datenbankdatei.
+
+| Testklasse | Prüft | Anforderungen |
+|---|---|---|
+| `lager.db.DatenbankTest` | Schema: lokale Datei, keine Preise, View `bestand`, Trigger | A01, A03, A05, A06 |
+| `lager.service.BuchungenTest` | Lager und Bestand, die vier Buchungsarten, harte Regeln | A04 bis A16 |
+| `lager.service.MindestbestandTest` | weiche Regel Mindestbestand | A17 bis A19 |
+| `lager.service.StammdatenTest` | Anlegen, Bearbeiten, Löschen, Deaktivieren, Reaktivieren | A21 bis A26 |
+| `lager.service.AuswertungenTest` | die vier Auswertungen | A27 bis A30 |
+| `lager.ui.LagerKonsoleTest` | Bedienung mit eingespielten Eingaben | A02, A07, A18, A20, A21, A23, A31 bis A33 |
+
+```bash
+mvn -q -B test        # nur die Tests
+./lager.sh            # baut mit Tests; schlägt ein Test fehl, startet das Programm nicht
+```
+
+**Prüflauf mit Beispieldaten.** `beispieldaten.txt` enthält die Eingaben für einen kompletten
 Durchlauf: 6 Lagerorte, 10 Artikel, Eingänge, Umlagerungen, Ausgänge und eine Inventurkorrektur.
 
 ```bash

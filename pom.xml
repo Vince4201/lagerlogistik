@@ -20,6 +20,13 @@
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.53.4.0</version>
         </dependency>
+        <!-- Nur für die Tests unter src/test, kommt nicht in die JAR-Datei. -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>6.1.3</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -29,6 +36,16 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.16.0</version>
+            </plugin>
+            <!-- Führt die Tests aus; läuft bei jedem mvn package, also auch in lager.sh. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <!-- Der SQLite-Treiber lädt eine native Bibliothek; ab Java 24 sonst mit Warnung. -->
+                    <argLine>--enable-native-access=ALL-UNNAMED</argLine>
+                </configuration>
             </plugin>
             <!-- Packt Programm und SQLite-Treiber in eine einzige ausführbare JAR-Datei. -->
             <plugin>
