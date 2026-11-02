@@ -5,16 +5,20 @@ mit Maven baut.
 
 ## Dokumentenkette
 
-Die Dokumentation besteht aus drei Dateien, die aufeinander aufbauen:
+Jeder Schritt hat ein eigenes Dokument, jedes baut auf dem vorigen auf:
 
-1. [anforderungen.md](anforderungen.md): was das Programm leisten soll, ohne Technik.
-2. [datenmodell-und-ablaeufe.md](datenmodell-und-ablaeufe.md): wie die Anforderungen in Daten und
-   Abläufe übersetzt werden.
-3. [spezifikation.md](spezifikation.md): wie das Programm technisch gebaut ist, genau genug zum
-   Umsetzen und Prüfen.
+1. [anforderungen.md](anforderungen.md): was das Programm können muss, ohne Technik. Nummeriert,
+   je Anforderung ein Satz. Die Nummern bleiben fest, die späteren Glieder verweisen darauf.
+2. [datenmodell-und-ablaeufe.md](datenmodell-und-ablaeufe.md): welche Dinge es gibt, welche
+   Eigenschaften sie haben, wie sie zusammenhängen, und die Abläufe Einlagern, Auslagern, Auswerten.
+3. [spezifikation.md](spezifikation.md): die Bauanleitung. Welche Befehle es gibt, was jeder Befehl
+   prüft, was er verändert und was er ausgibt.
+4. Implementierung: der Quelltext unter `src/`.
+5. Test: Prüfungen, die zeigen, dass die Implementierung die Anforderungen erfüllt. Automatische
+   Tests gibt es noch nicht, bisher nur den Prüflauf mit `beispieldaten.txt`.
 
 Änderungen laufen die Kette entlang: erst die Anforderung, dann Datenmodell und Abläufe, dann die
-Spezifikation, zuletzt der Code. Ein späteres Dokument widerspricht nie einem früheren. Eine
+Spezifikation, zuletzt Code und Test. Ein späteres Glied widerspricht nie einem früheren. Eine
 zusammenfassende KONZEPT.md gibt es nicht mehr.
 
 ## Git ist das Gedächtnis des Projekts
@@ -28,21 +32,47 @@ deshalb in der Git-Historie und nirgendwo sonst.
   passieren soll.
 - `git log --oneline -15`: Was ist zuletzt passiert? Details mit `git show <commit>`.
 
-**Während der Arbeit**
+**Commits**
 
-- Nach jedem abgeschlossenen Schritt committen, der baut und läuft. Ein Commit enthält eine Sache.
-- Prüfen vor dem Commit: `rm -f test.db && ./lager.sh test.db < beispieldaten.txt` muss ohne
-  Fehler durchlaufen.
-- Commit-Nachrichten auf Deutsch. Erste Zeile kurz: was geändert wurde. Darunter: warum, welche
-  Entscheidung getroffen wurde, was verworfen wurde, was noch offen ist. Diesen Teil braucht man später.
-- Ändert sich das Verhalten, werden die betroffenen Dokumente der Kette im selben Commit angepasst.
+- Ein Commit je Zug. Ein Zug ist eine thematisch abgeschlossene Einheit aus mehreren
+  Arbeitsschritten, etwa „Anforderungen überarbeitet“. Nach jedem Zug committen, nicht erst am
+  Ende, und keine Züge in einem Commit bündeln. Leere Commits gibt es nicht.
+- Jede Commit-Nachricht beginnt mit einem Präfix aus diesem Katalog, dann Doppelpunkt und
+  Kurzbeschreibung auf Deutsch:
+
+  | Präfix | Wofür |
+  |---|---|
+  | `Setup:` | Einrichtung und Regeln: `CLAUDE.md`, `.gitignore`, Werkzeuge |
+  | `Anforderungen:` | `anforderungen.md` |
+  | `Datenmodell:` | `datenmodell-und-ablaeufe.md` |
+  | `Spezifikation:` | `spezifikation.md` |
+  | `Code:` | Quelltext unter `src/`, `pom.xml`, `lager.sh` |
+  | `Test:` | Tests und Testdaten wie `beispieldaten.txt` |
+  | `Sonstiges:` | alles andere |
+
+- Unter der ersten Zeile steht, warum: welche Entscheidung getroffen wurde, was verworfen wurde,
+  was noch offen ist. Diesen Teil braucht man später.
+- Vor jedem `Code:`-Commit den Prüflauf ausführen und das Ergebnis in die Commit-Nachricht
+  schreiben: `rm -f test.db && ./lager.sh test.db < beispieldaten.txt` muss ohne Fehler
+  durchlaufen. Ein Fehlschlag blockiert den Commit nicht, muss aber in der Nachricht stehen.
+- Ändert sich das Verhalten, werden die betroffenen Glieder der Kette im selben Zug angepasst.
+- Am Ende der Sitzung ein Abschluss-Commit für alles, was noch nicht erfasst ist, damit der Ordner
+  sauber ist. Ist schon alles committet, entfällt er.
+- Keine Geheimnisse: Zugangsdaten, Passwörter und Schlüssel kommen in keine Datei, die committet
+  wird.
+- Kein Push ohne Anweisung. Was nach GitHub geht, entscheidet der Mensch.
+- Die Geschichte wird nicht umgeschrieben: kein `git reset --hard`, kein `git push --force`, kein
+  `git commit --amend` auf Commits, die schon auf GitHub liegen. Falsches nimmt `git revert` zurück.
 - Experimente gehören auf einen eigenen Branch, nicht auf `main`.
 
 **Nachschlagen**
 
+- `git diff`: Was ist geändert und noch nicht vorgemerkt?
+- `git log -p -- <datei>`: Geschichte einer Datei mit allen Änderungen.
 - `git log --grep=<Begriff>`: Wann und warum kam etwas dazu?
-- `git log -p -- <datei>`: Geschichte einer Datei.
 - `git blame <datei>`: Aus welchem Commit stammt eine Zeile?
-- `git revert <commit>`: Einen Commit zurücknehmen, ohne die Historie zu verändern.
+- `git show <commit>:<datei>`: eine alte Fassung ansehen, ohne etwas zu ändern.
 
 **Nicht im Repository:** `target/` (Build) und `*.db` (Laufzeitdaten), siehe `.gitignore`.
+
+GitHub: <https://github.com/Vince4201/lagerlogistik> (öffentlich).
