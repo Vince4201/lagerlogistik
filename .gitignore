@@ -1,0 +1,13 @@
+# Build-Ausgabe von Maven, entsteht mit ./lager.sh neu
+target/
+
+# Laufzeitdaten (SQLite); eine Testdatenbank entsteht aus beispieldaten.txt
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Editoren und IDEs
+.idea/
+.vscode/
+*.iml
