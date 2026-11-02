@@ -1,72 +1,78 @@
 # Lagerverwaltung – Anforderungen
 
 Erstes Dokument der Kette **anforderungen.md** → [datenmodell-und-ablaeufe.md](datenmodell-und-ablaeufe.md)
-→ [spezifikation.md](spezifikation.md). Hier steht, *was* das Programm leisten soll, ohne Technik.
+→ [spezifikation.md](spezifikation.md). Hier steht, *was* das Programm können muss, ohne Technik.
 
-## Zweck
+Je Anforderung ein Satz. Die Nummern bleiben fest, auch wenn Anforderungen dazukommen oder
+wegfallen, denn die späteren Dokumente verweisen darauf. Alle Anforderungen gelten für Version 1.
 
-Eine Einzelplatz-Lagerverwaltung für das Terminal. Sie weiß jederzeit, welcher Artikel in welcher
-Menge an welchem Lagerort liegt, und macht jede Bestandsänderung nachvollziehbar.
+## Rahmen
 
-## Grundsätze
+- **A01** Die Lagerverwaltung ist eine Einzelplatz-Anwendung: ein Benutzer an einem Rechner.
+- **A02** Sie wird im Terminal über Menüs bedient.
+- **A03** Sie verwaltet nur Mengen, Preise kommen nicht vor.
 
-- Keine Preise. Es geht nur um Mengen.
-- Ein Artikel kann an beliebig vielen Lagerorten liegen, ein Lagerort kann beliebig viele Artikel
-  enthalten.
-- Jede Bestandsänderung wird als Bewegung protokolliert. Bestand und Protokoll dürfen nie
-  voneinander abweichen.
-- Gebuchte Bewegungen werden nie geändert oder gelöscht. Fehler korrigiert man mit einer
-  Korrekturbuchung.
+## Lager und Bestand
+
+- **A04** Ein Artikel kann an beliebig vielen Lagerorten liegen, und ein Lagerort kann beliebig
+  viele Artikel enthalten.
+- **A05** Jede Bestandsänderung wird als Bewegung protokolliert, und der Bestand ergibt sich allein
+  aus den Bewegungen.
+- **A06** Gebuchte Bewegungen werden nie geändert oder gelöscht; Fehler werden mit einer
+  Korrekturbuchung ausgeglichen.
+- **A07** Mengen sind ganze Zahlen, die Einheit ist nur ein Anzeigetext.
 
 ## Buchungen
 
-| Vorgang | Wirkung am Lagerort | Gesamtbestand | Mindestbestand prüfen? |
-|---|---|---|---|
-| Wareneingang | + Ziel | steigt | nein |
-| Warenausgang | − Quelle | sinkt | ja |
-| Umlagerung | − Quelle, + Ziel | unverändert | nein |
-| Korrektur / Inventur | gezählter Bestand wird übernommen, Differenz ± | ± | ja, wenn er sinkt |
+- **A08** Ein Wareneingang erhöht den Bestand eines Artikels an einem Ziel-Lagerort.
+- **A09** Ein Warenausgang senkt den Bestand eines Artikels an einem Quell-Lagerort.
+- **A10** Eine Umlagerung bringt eine Menge eines Artikels von einem Lagerort an einen anderen,
+  ohne den Gesamtbestand zu ändern.
+- **A11** Bei einer Korrektur (Inventur) wird der gezählte Bestand an einem Lagerort übernommen und
+  die Differenz zum gebuchten Bestand gebucht.
 
-## Regeln
+## Harte Regeln
 
-**Harte Regeln:** Die Buchung wird abgelehnt, wenn eine davon verletzt ist.
+Ist eine davon verletzt, wird die Buchung abgelehnt.
 
-- Die Menge ist eine ganze Zahl größer 0.
-- Artikel und Lagerort existieren und sind aktiv.
-- Entnommen wird höchstens, was an diesem Lagerort liegt. Kein Lagerort wird negativ.
-- Bei einer Umlagerung sind Quelle und Ziel verschieden.
-- Eine Korrektur braucht eine Begründung.
+- **A12** Die Menge einer Buchung ist größer als 0.
+- **A13** Gebucht wird nur auf Artikel und Lagerorte, die existieren und aktiv sind.
+- **A14** Entnommen wird höchstens, was an dem Lagerort liegt, sodass kein Lagerort negativ wird.
+- **A15** Bei einer Umlagerung sind Quelle und Ziel verschieden.
+- **A16** Eine Korrektur braucht eine Begründung.
 
-**Weiche Regel Mindestbestand:** Die Buchung wird ausgeführt, danach kommt eine Warnung.
+## Mindestbestand
 
-- Der Mindestbestand gilt je Artikel für den Gesamtbestand über alle Lagerorte.
-- Gewarnt wird, wenn Gesamtbestand < Mindestbestand. Mindestbestand 0 heißt: keine Überwachung.
-- Geprüft wird nach jeder Buchung, die den Gesamtbestand senkt (Ausgang, Korrektur nach unten).
-  Die Warnung kommt bei jedem solchen Vorgang, solange der Artikel unter dem Mindestbestand liegt.
-- Eine Umlagerung löst nie eine Warnung aus.
-- Zusätzlich gibt es eine Liste aller Artikel unter Mindestbestand und einen Hinweis beim
-  Programmstart.
+Eine weiche Regel: Die Buchung wird ausgeführt, danach kommt eine Warnung.
+
+- **A17** Jeder Artikel hat einen Mindestbestand, der für seinen Gesamtbestand über alle Lagerorte
+  gilt; 0 heißt keine Überwachung.
+- **A18** Nach jeder Buchung, die den Gesamtbestand senkt, wird gewarnt, wenn er danach unter dem
+  Mindestbestand liegt, auch wenn er schon vorher darunter lag.
+- **A19** Eine Umlagerung löst nie eine Mindestbestandswarnung aus.
+- **A20** Beim Programmstart weist das Programm darauf hin, wenn Artikel unter dem Mindestbestand
+  liegen.
 
 ## Stammdaten
 
-- Artikel: Nummer, Bezeichnung, Einheit (Standard Stk), Mindestbestand.
-- Lagerort: Code (z. B. A-01-03), Bezeichnung (optional).
-- Nummern und Codes sind eindeutig, unveränderlich und werden in Großbuchstaben gespeichert.
-- Löschen geht nur, solange es keine Bewegungen gibt. Danach kann man nur noch deaktivieren, und
-  das nur ohne Bestand. Deaktivierte Artikel und Lagerorte lassen sich nicht bebuchen, können aber
-  wieder aktiviert werden.
-- Mengen sind ganze Zahlen, die Einheit ist nur ein Anzeigetext.
+- **A21** Ein Artikel hat eine Nummer, eine Bezeichnung, eine Einheit (Standard Stk) und einen
+  Mindestbestand.
+- **A22** Ein Lagerort hat einen Code (z. B. A-01-03) und eine optionale Bezeichnung.
+- **A23** Nummern und Codes sind eindeutig, unveränderlich und werden in Großbuchstaben gespeichert.
+- **A24** Artikel und Lagerorte lassen sich löschen, solange es zu ihnen keine Bewegungen gibt.
+- **A25** Gibt es Bewegungen, lassen sie sich nur noch deaktivieren, und das nur, wenn sie keinen
+  Bestand haben.
+- **A26** Deaktivierte Artikel und Lagerorte lassen sich nicht bebuchen, aber wieder aktivieren.
 
 ## Auswertungen
 
-- Bestand je Artikel: Gesamtbestand und Verteilung auf die Lagerorte.
-- Bestand je Lagerort: Was liegt wo?
-- Artikel unter Mindestbestand, mit Fehlmenge.
-- Bewegungsprotokoll, filterbar nach Artikel und Lagerort.
+- **A27** Das Programm zeigt je Artikel den Gesamtbestand und die Verteilung auf die Lagerorte.
+- **A28** Das Programm zeigt je Lagerort, welche Artikel in welcher Menge dort liegen.
+- **A29** Das Programm listet alle Artikel unter dem Mindestbestand mit ihrer Fehlmenge.
+- **A30** Das Programm zeigt das Bewegungsprotokoll, filterbar nach Artikel und Lagerort.
 
 ## Bedienung
 
-- Menügeführt im Terminal.
-- Falsche Eingaben werden erneut abgefragt.
-- Eine leere Eingabe bricht den laufenden Vorgang ab.
-- `?` zeigt eine Auswahlliste.
+- **A31** Falsche Eingaben werden erneut abgefragt.
+- **A32** Eine leere Eingabe bricht den laufenden Vorgang ab.
+- **A33** Mit `?` lässt sich eine Auswahlliste anzeigen.
