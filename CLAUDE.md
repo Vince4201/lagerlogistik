@@ -3,6 +3,13 @@
 Terminal-Lagerverwaltung in Java 21 mit SQLite. Fachliche Regeln, Bedienung und Aufbau des Codes
 stehen in [KONZEPT.md](KONZEPT.md). Starten mit `./lager.sh`, das bei Bedarf vorher mit Maven baut.
 
+## Nur ein Konzeptdokument
+
+Statt der Kette `anforderungen.md` → `datenmodell-und-ablaeufe.md` → `spezifikation.md` gibt es in
+diesem Projekt nur KONZEPT.md. Anforderungen, Datenmodell, Abläufe und Regeln stehen alle dort.
+Die drei Dateien der Kette werden nicht angelegt. Neues kommt in den passenden Abschnitt von
+KONZEPT.md.
+
 ## Git ist das Gedächtnis des Projekts
 
 Von einer Sitzung zur nächsten weiß der Agent nichts mehr. Was gemacht wurde und warum, steht
