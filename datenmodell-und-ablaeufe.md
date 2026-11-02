@@ -2,9 +2,9 @@
 
 Zweites Dokument der Kette [anforderungen.md](anforderungen.md) → **datenmodell-und-ablaeufe.md**
 → [spezifikation.md](spezifikation.md). Hier steht, wie die Anforderungen in Daten und Abläufe
-übersetzt werden.
+übersetzt werden. Die Nummern in Klammern verweisen auf [anforderungen.md](anforderungen.md).
 
-## Datenmodell
+## Datenmodell (A04 bis A07, A21, A22)
 
 Gespeichert werden Artikel, Lagerorte und Bewegungen. Der Bestand wird nicht gespeichert, sondern
 aus den Bewegungen berechnet.
@@ -45,7 +45,10 @@ Weil es keine eigene Bestandstabelle gibt, können Bestand und Protokoll nie von
 
 ## Abläufe
 
-### Buchung (gilt für alle vier Arten)
+Einlagern heißt hier Wareneingang, Auslagern Warenausgang. Dazu kommen Umlagerung, Korrektur,
+das Auswerten und die Pflege der Stammdaten.
+
+### Buchung, gilt für alle vier Arten (A05, A12 bis A14, A17, A18)
 
 Eine Buchung wird ganz oder gar nicht ausgeführt:
 
@@ -60,24 +63,24 @@ Eine Buchung wird ganz oder gar nicht ausgeführt:
 
 Scheitert einer der Schritte 1 bis 4, wird nichts gespeichert und der Grund gemeldet.
 
-### Wareneingang
+### Wareneingang (A08)
 
 Artikel → Ziel-Lagerort → Menge → Bemerkung (optional, z. B. Lieferschein) → Bewegung „Eingang“.
 
-### Warenausgang
+### Warenausgang (A09, A14)
 
 Artikel (muss Bestand haben) → Quell-Lagerort (nur einer, an dem der Artikel liegt) → Menge
 (höchstens der Bestand an der Quelle) → Bemerkung (optional, z. B. Auftrag) → Bewegung „Ausgang“
 → Mindestbestand prüfen.
 
-### Umlagerung
+### Umlagerung (A10, A15, A19)
 
 Voraussetzung: mindestens zwei aktive Lagerorte. Artikel (muss Bestand haben) → Quell-Lagerort →
 Ziel-Lagerort (nicht die Quelle) → Menge (höchstens der Bestand an der Quelle) → Bemerkung
 (optional) → Bewegung „Umlagerung“. Der Gesamtbestand bleibt gleich, deshalb gibt es keine
 Mindestbestandsprüfung.
 
-### Korrektur / Inventur
+### Korrektur / Inventur (A11, A16)
 
 1. Artikel und Lagerort wählen. Der gebuchte Bestand dort wird angezeigt.
 2. Gezählten Bestand eingeben (0 oder mehr).
@@ -86,14 +89,29 @@ Mindestbestandsprüfung.
 5. Differenz > 0: Bewegung „Korrektur“ mit Nach-Lagerort.
    Differenz < 0: Bewegung „Korrektur“ mit Von-Lagerort, danach Mindestbestand prüfen.
 
-### Artikel oder Lagerort anlegen und bearbeiten
+### Auswerten (A27 bis A30)
+
+Auswertungen lesen nur und ändern nichts. Artikel und Lagerort lassen sich als Filter angeben, ohne
+Filter gilt die Auswertung für alle.
+
+- **Bestand je Artikel:** Mit Filter Gesamtbestand, Mindestbestand und Bestand je Lagerort dieses
+  Artikels. Ohne Filter alle aktiven Artikel mit Gesamtbestand und Mindestbestand; Artikel unter dem
+  Mindestbestand sind markiert.
+- **Bestand je Lagerort:** alle Bestände ungleich 0, für einen Lagerort oder für alle. Ohne Filter
+  werden zusätzlich die aktiven Lagerorte genannt, an denen nichts liegt.
+- **Artikel unter Mindestbestand:** alle aktiven Artikel mit Gesamtbestand < Mindestbestand, mit der
+  Fehlmenge = Mindestbestand − Gesamtbestand.
+- **Bewegungsprotokoll:** die Bewegungen in Buchungsreihenfolge, wahlweise nur zu einem Artikel,
+  nur zu einem Lagerort (als Von- oder Nach-Lagerort) oder beides.
+
+### Artikel oder Lagerort anlegen und bearbeiten (A21 bis A23, A26)
 
 - Nummer bzw. Code werden beim Anlegen vergeben und lassen sich danach nicht mehr ändern.
 - Bearbeiten ändert Bezeichnung, beim Artikel auch Einheit und Mindestbestand.
 - Ist der Datensatz deaktiviert, wird beim Bearbeiten angeboten, ihn wieder zu aktivieren.
 - Liegt ein Artikel nach dem Anlegen oder Bearbeiten unter dem Mindestbestand, kommt ein Hinweis.
 
-### Artikel oder Lagerort entfernen
+### Artikel oder Lagerort entfernen (A24, A25)
 
 1. Der Datensatz muss aktiv sein.
 2. Artikel: Der Gesamtbestand muss 0 sein. Lagerort: Es darf kein Artikel mehr dort liegen.
@@ -101,7 +119,7 @@ Mindestbestandsprüfung.
 
 Vorher wird angezeigt, ob gelöscht oder deaktiviert wird, und nachgefragt.
 
-### Programmstart
+### Programmstart (A20)
 
 1. Die Datenbankdatei wird geöffnet. Fehlt sie, wird sie angelegt.
 2. Gibt es noch keine Artikel, kommt der Hinweis, zuerst Stammdaten anzulegen.
