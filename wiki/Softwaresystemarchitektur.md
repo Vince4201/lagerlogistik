@@ -132,11 +132,14 @@ ARC-Register (§Festlegungen) und die Lage-Entität
 
 ---
 
-**Bearbeitungsstand:** _(vom Agenten beim Init aus dem Auftrag
-abgeleitet; lebende Sektionen bei Änderungen
-überschrieben, Festlegungen als ARC-Elemente geführt)_
+**Bearbeitungsstand:** 2026-11-09 — Migration: Datenmodell aus
+`datenmodell-und-ablaeufe.md` und Aufbau des Codes aus
+`spezifikation.md` als Ist-Stand übernommen (ARC-Elemente in
+§Festlegungen, Überblick in §Ist-Stand); die lebenden Sektionen des
+Sollzustands sind noch nicht gefüllt.
 
-Beschreibt den **Sollzustand** des Projekts.
+Beschreibt den **Sollzustand** des Projekts; der übernommene Ist-Stand
+steht getrennt davon in §Ist-Stand.
 
 ## Zweck und Abgrenzung
 
@@ -147,6 +150,31 @@ es nicht.>
 
 _(Register der Architektur-Festlegungen, chronologisch
 nach ID; Eintragsformat in `## Meta`.)_
+
+### ARC-001 — Datenmodell
+
+- **Status:** offen — **Datum:** 2026-11-09
+- **Gestützt auf:** FUNC-003, FUNC-004, FUNC-005, FUNC-006, FUNC-007,
+  FUNC-009
+- **Quelle:** [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
+  §Datenmodell — Ist-Stand, Bestand aus der Migration
+- **Detail:** [[ARC-001 Datenmodell]]
+
+### ARC-002 — Bestand aus Bewegungen berechnet
+
+- **Status:** offen — **Datum:** 2026-11-09
+- **Gestützt auf:** FUNC-003, FUNC-008
+- **Quelle:** [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
+  §Datenmodell, §Bestand — Ist-Stand, Bestand aus der Migration
+- **Detail:** [[ARC-002 Bestand aus Bewegungen berechnet]]
+
+### ARC-003 — Paketaufbau des Codes
+
+- **Status:** offen — **Datum:** 2026-11-09
+- **Gestützt auf:** FUNC-001, FUNC-002, FUNC-003
+- **Quelle:** [spezifikation.md](../spezifikation.md) §Aufbau des Codes
+  — Ist-Stand, Bestand aus der Migration
+- **Detail:** [[ARC-003 Paketaufbau des Codes]]
 
 ## Einstiegspunkte
 
@@ -188,3 +216,30 @@ die Werkzeuge, die sie durchsetzen.>
 ## Design-Patterns
 
 <Die für dieses Projekt verbindlichen Design-Patterns.>
+
+## Ist-Stand
+
+_(Dokumentierter Ist-Stand, aus dem Vorgefundenen übernommen — kein
+Sollzustand. Was davon eine Festlegung ist, steht als ARC-Element in
+§Festlegungen.)_
+
+- **Datenmodell:** Artikel, Lagerort und Bewegung; der Bestand wird aus
+  den Bewegungen berechnet, nicht gespeichert —
+  [[ARC-001 Datenmodell]], [[ARC-002 Bestand aus Bewegungen berechnet]].
+  Die Bauanleitung der Datenbank: [[SPEC-001 Datenbankschema]].
+- **Aufbau des Codes:** Pakete `lager`, `lager.model`, `lager.db`,
+  `lager.service` und `lager.ui` — [[ARC-003 Paketaufbau des Codes]].
+- **Einstiegspunkte:** `lager.Main` — Startpunkt, öffnet die Datenbank
+  und startet die Konsole; das Startskript `lager.sh` baut bei Bedarf
+  und startet das Programm.
+- **Technologie-Stack:** Java 21; SQLite über den Treiber
+  `org.xerial:sqlite-jdbc`, die Daten liegen in einer lokalen
+  Datenbankdatei (Standard `lager.db`); Build mit Maven, das Programm
+  und Treiber in die eine ausführbare Datei `target/lagerverwaltung.jar`
+  packt; automatische Tests mit JUnit 6. Die Festlegungen dazu stehen
+  in [[Entscheidungen]]: DEC-007 (Java 21), DEC-008 (SQLite),
+  DEC-009 (Maven), DEC-010 (eine ausführbare JAR-Datei), DEC-011
+  (JUnit über Surefire).
+- **Herkunft:** [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
+  §Datenmodell; [spezifikation.md](../spezifikation.md) §Technik und
+  Start, §Aufbau des Codes, §Prüfen.
