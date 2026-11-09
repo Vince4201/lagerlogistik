@@ -42,7 +42,8 @@ der Lint-Hinweis `REG-OHNE-EINTRAG` erwartet.
 2. **Neu angelegt:** Übernahme-Marke `Uebernahme-2026-11-09`
    ([[Zielmarken]]), Ordner-Freigaben DEC-013 bis DEC-017,
    `Tools.md` mit den Prüf-Werkzeugen und dem Ersatzweg
-   Ein-Modell-Weg, neue `TODO.md`.
+   Ein-Modell-Weg, neue `TODO.md`; nach der Prüfrunde 1 der Nachweis
+   REC-001 (archiviert unter `research/`).
 3. **Version 1:** Der Satz „Alle Anforderungen gelten für Version 1.“
    (`anforderungen.md`) geht in die Beschreibung der Übernahme-Marke
    ein. Eine eigene Marke „1“ wird nicht nachgebaut (Grundsatz:
@@ -52,6 +53,31 @@ der Lint-Hinweis `REG-OHNE-EINTRAG` erwartet.
    durch die Register und die Kettenprüfung des Referenzprozesses
    abgelöst. Zwischenzeitlich verworfen war die Variante „nur
    KONZEPT.md“ (`f3b2bd4`, zurückgenommen in `e11a977`).
+5. **Entscheide des Anwenders zu den Prüfberichten der Runde 1**
+   (REP-001, REP-002; „alles wie empfohlen“, 2026-11-09):
+   - **Testart:** Projekt-Regel in
+     [[Testname-mit-Anforderungsnummer]]: Jeder JUnit-Test mit
+     Anforderungsnummer ist ein Testfall. TEST-001 bis TEST-033
+     (Datenbank- und Serviceklassen) `integration`, TEST-034 bis
+     TEST-042 (über die Konsole) `system`.
+   - **DEC-001, DEC-002, DEC-003, DEC-005, DEC-006** bleiben als
+     Rahmen-Festlegungen, aus REQ-001 bis REQ-003, REQ-006 und
+     REQ-024 bis REQ-026 abgeleitet; ARC-001 stützt sich auf sie.
+   - **Komponenten-Zeile** in [[Softwaresystemarchitektur]]
+     §Komponenten angelegt, Repo-Name `lagerlogistik` (wie auf
+     GitHub); Remote `https://github.com/Vince4201/lagerlogistik`.
+   - **Keine Zielumgebung und kein Deployment:** vorgefunden ist nur
+     lokaler Einzelplatzbetrieb; Start und Bau stehen als Anleitung
+     [[Bauen-und-Starten-mit-lager-sh]] in [[InterneMechanik]].
+   - **Alte Prüfergebnisse** aus Commit `2eb6d29` als Nachweis
+     [[REC-001 — Pruefergebnisse zum Stand von Commit 2eb6d29]];
+     daraus das Soll-Ergebnis des Prüflaufs (12 Posten, Summe 1907)
+     in [[Softwaresystemtest-Setup]].
+   - **Testnamen:** Neue Tests beginnen mit `REQ-NNN`, die
+     bestehenden behalten `A..`.
+   - **Herkunftszeilen** („Quelle“, bei DEC „Verweise: Herkunft“)
+     bleiben und sind in allen Registern Markdown-Links auf die
+     Quelldatei.
 
 ## Ungeklärt
 
@@ -65,34 +91,40 @@ Empfehlung. Vorzulegen bei der Gesamt-Annahme.
    `umgesetzt` (Beleg: Code und Tests), FUNC, SPEC, ARC und TEST
    `offen` nach der Regel ihrer Meta. `abgeschlossen` wurde nicht
    gewählt, weil es noch keinen Testbericht und keinen Git-Tag gibt;
-   bei den DEC wäre `angenommen` vorsichtiger. Angleichen?
+   bei den DEC wäre `angenommen` vorsichtiger. Prüfer 1 (REP-001)
+   hält `umgesetzt` für gedeckt (MIGRATION Phase 2: „nach dem, was
+   Code belegt“). Empfehlung: so lassen; `umgesetzt` ohne Git-Tag ist
+   eine Einschätzung.
 3. **Regeln aus der Einleitung von `anforderungen.md`** („je
    Anforderung ein Satz“, „Nummern bleiben fest“): Empfehlung, sie als
    durch das REQ-Register abgedeckt zu betrachten (Kurzsatz je REQ,
    Kennungen werden nie wiederverwendet); keine eigene Regel.
 4. **Herkunftszeilen:** Die REQ-Einträge tragen eine Zeile
-   `- **Quelle:**`, die die Meta nicht kennt; die übrigen Register
-   nennen die Herkunft unter Verweise oder Bezüge. Vereinheitlichen
-   oder so lassen?
+   `- **Quelle:**`, die die Meta nicht kennt. _Entschieden
+   2026-11-09:_ so lassen, einheitlich als Markdown-Link
+   (§Festlegungen Nr. 5).
 5. **Alte Testergebnisse** in `target/surefire-reports/` (12 Dateien
    vom 2026-11-02, Build-Ausgabe, nicht versioniert, nicht gelesen):
-   Empfehlung, sie nicht als Nachweis aufzunehmen; der erste
-   Testbericht entsteht im nächsten Testdurchgang.
-6. **Testart:** Alle 42 TEST tragen `testart: system`. 33 davon laufen
-   technisch unterhalb der Konsole; `integration` bräuchte laut Meta
-   von [[Testfaelle]] eine Projekt-Regel in [[InterneMechanik]].
-7. **Prüflauf mit `beispieldaten.txt`:** Er hat kein Soll-Ergebnis und
-   keine Anforderungsnummer und steht deshalb nur im
-   [[Softwaresystemtest-Setup]]. Eigener TEST?
-8. **Eigene Zeile in §Komponenten** von
-   [[Softwaresystemarchitektur]] (Pfad `.`) ist nicht angelegt. Namen
-   in den Quellen: Ordner `largerlogistik`, GitHub-Repo
-   `Vince4201/lagerlogistik`, Maven-Artefakt `lagerverwaltung`.
-   Empfehlung: mit der Ein-/Zwei-Repo-Frage in Phase 5 klären.
+   nicht als Nachweis aufgenommen; der erste Testbericht entsteht im
+   nächsten Testdurchgang. Die Prüfergebnisse aus der Nachricht von
+   Commit `2eb6d29` stehen in REC-001 (§Festlegungen Nr. 5).
+6. **Testart:** _Entschieden 2026-11-09:_ 33 TEST `integration`,
+   9 TEST `system`, Projekt-Regel in
+   [[Testname-mit-Anforderungsnummer]] (§Festlegungen Nr. 5).
+7. **Prüflauf mit `beispieldaten.txt`:** Sein Soll-Ergebnis (12
+   Posten, Summe 1907) stand in der Nachricht von Commit `2eb6d29`
+   und steht jetzt im [[Softwaresystemtest-Setup]]. Offen bleibt nur:
+   eigener TEST? Er hat keine Anforderungsnummer. Empfehlung: so
+   lassen, er bleibt Teil des Setups.
+8. **Eigene Zeile in §Komponenten:** _Entschieden 2026-11-09:_
+   angelegt, Repo-Name `lagerlogistik` (§Festlegungen Nr. 5). Die
+   Ein-/Zwei-Repo-Frage bleibt für Phase 5.
 9. **Anforderungen ohne Funktionsbeschreibung:** REQ-001, REQ-003,
    REQ-004 und REQ-006 haben keine FUNC (A04 und A06 stehen nur im
    Datenmodell, jetzt ARC-001 und SPEC-001; A01 und A03 nur in
-   §Prüfen). Eigene FUNC anlegen oder so lassen?
+   §Prüfen). Jede REQ hat aber mindestens einen TEST. Empfehlung:
+   so lassen und in der ersten Kettenprüfung nach der Migration
+   entscheiden, statt jetzt FUNC zu erfinden.
 10. **„Git ist das Gedächtnis“** (`CLAUDE-vorgefunden.md`, Sitzungsbeginn
     mit `git status` und `git log`): abgelöst durch den Sessionstart
     des Regelwerks (MasterPrompt §9, §6.5). Empfehlung: nicht
@@ -107,13 +139,14 @@ Empfehlung. Vorzulegen bei der Gesamt-Annahme.
     ([[Aktivierter-Prozess]]); `Datenmodell:`, `Spezifikation:` und
     `Test:` gibt es dort nicht. Empfehlung: nicht als Projekt-Präfixe
     deklarieren; mit der Commit-Sprache in Phase 5 abschließen.
-13. **Verworfene Alternativen:** nur bei DEC-004 belegt; bei den übrigen
-    DEC steht „nicht dokumentiert“.
-14. **Nicht eingeordnet:** die öffentliche GitHub-Adresse des Projekts
-    (Kandidat für [[Facts]] §2, Anwender-Terrain, nur auf Anweisung),
-    die Bezüge auf das Kursskript „Arbeiten mit KI-Agenten“ und die
-    Prüfergebnisse in der Nachricht von Commit `2eb6d29` (Kandidaten
-    für [[Rechercheartefakte]]).
+13. **Verworfene Alternativen:** bei keiner DEC dokumentiert. Bei
+    DEC-004 ist die eigene Bestandstabelle aus dem Begründungssatz der
+    Quelle abgeleitet und so gekennzeichnet; bei den übrigen DEC
+    steht „nicht dokumentiert“.
+14. **Nicht eingeordnet:** die Bezüge auf das Kursskript „Arbeiten
+    mit KI-Agenten“. Die GitHub-Adresse steht jetzt als Remote in
+    §Komponenten von [[Softwaresystemarchitektur]], die
+    Prüfergebnisse aus Commit `2eb6d29` in REC-001.
 15. **Ordner `target/`** (Maven-Build-Ausgabe, per `.gitignore`
     ausgeschlossen): keine Ordner-Freigabe gebucht, weil nicht
     versioniert.
@@ -148,4 +181,8 @@ Empfehlung. Vorzulegen bei der Gesamt-Annahme.
 
 ## Vermerke
 
-_(keine)_
+- 2026-11-09 — Nacharbeit nach den Prüfberichten der Runde 1
+  ([[REP-001 — Absicherungs-Review Migration Pruefer 1]],
+  [[REP-002 — Absicherungs-Review Migration Pruefer 2]], beide gelb):
+  Entscheide des Anwenders in §Festlegungen Nr. 5; Ungeklärt 4 bis 9,
+  13 und 14 nachgeführt.

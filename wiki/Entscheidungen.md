@@ -351,8 +351,8 @@ _(chronologisch nach ID)_
   Einzelplatz-Anwendung, ein Benutzer an einem Rechner.
   Begründung und verworfene Alternativen sind nicht
   dokumentiert.
-- **Verweise:** Herkunft `anforderungen.md` A01 (§Rahmen),
-  übernommen als REQ-001; `spezifikation.md` §Prüfen
+- **Verweise:** Herkunft [anforderungen.md](../anforderungen.md) A01 (§Rahmen),
+  übernommen als REQ-001; [spezifikation.md](../spezifikation.md) §Prüfen
   (`DatenbankTest` prüft für A01 die lokale Datei)
 - **Nachbarschaft:** DEC-002, DEC-003, DEC-008 — geprüft,
   kein Widerspruch
@@ -364,8 +364,8 @@ _(chronologisch nach ID)_
   Terminal über Menüs bedient (Hauptmenü und
   Stammdatenmenü). Begründung und verworfene Alternativen
   sind nicht dokumentiert.
-- **Verweise:** Herkunft `anforderungen.md` A02 (§Rahmen),
-  übernommen als REQ-002; `spezifikation.md` §Hauptmenü,
+- **Verweise:** Herkunft [anforderungen.md](../anforderungen.md) A02 (§Rahmen),
+  übernommen als REQ-002; [spezifikation.md](../spezifikation.md) §Hauptmenü,
   §Stammdatenmenü; Commit `3b6f6b4` („menügeführte
   Terminal-Anwendung“)
 - **Nachbarschaft:** DEC-001, DEC-007 — geprüft, kein
@@ -377,8 +377,8 @@ _(chronologisch nach ID)_
 - **Wahl und Begründung:** Die Lagerverwaltung verwaltet nur
   Mengen; Preise kommen nicht vor. Begründung und
   verworfene Alternativen sind nicht dokumentiert.
-- **Verweise:** Herkunft `anforderungen.md` A03 (§Rahmen),
-  übernommen als REQ-003; `spezifikation.md` §Prüfen
+- **Verweise:** Herkunft [anforderungen.md](../anforderungen.md) A03 (§Rahmen),
+  übernommen als REQ-003; [spezifikation.md](../spezifikation.md) §Prüfen
   (`DatenbankTest` prüft, dass es keine Preise gibt);
   Commit `2eb6d29` („keine Preisspalten“)
 - **Nachbarschaft:** DEC-001, DEC-004 — geprüft, kein
@@ -391,10 +391,12 @@ _(chronologisch nach ID)_
   Lagerorte und Bewegungen; der Bestand wird nicht
   gespeichert, sondern aus den Bewegungen berechnet. Laut
   Quelle können so Bestand und Protokoll nie voneinander
-  abweichen; verworfen ist eine eigene Bestandstabelle.
-- **Verweise:** Herkunft `anforderungen.md` A05 (REQ-005);
-  `datenmodell-und-ablaeufe.md` §Datenmodell, §Bestand;
-  `spezifikation.md` §Datenbankschema (View `bestand`);
+  abweichen. Eine eigene Bestandstabelle als Alternative
+  ist daraus abgeleitet; eine Abwägung ist nicht
+  dokumentiert.
+- **Verweise:** Herkunft [anforderungen.md](../anforderungen.md) A05 (REQ-005);
+  [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md) §Datenmodell, §Bestand;
+  [spezifikation.md](../spezifikation.md) §Datenbankschema (View `bestand`);
   Commit `3b6f6b4`
 - **Nachbarschaft:** DEC-005, DEC-006, DEC-008 — geprüft,
   kein Widerspruch
@@ -409,10 +411,10 @@ _(chronologisch nach ID)_
   mit den Triggern `bewegung_nicht_aendern` und
   `bewegung_nicht_loeschen`. Begründung und verworfene
   Alternativen sind nicht dokumentiert.
-- **Verweise:** Herkunft `anforderungen.md` A06 (REQ-006),
+- **Verweise:** Herkunft [anforderungen.md](../anforderungen.md) A06 (REQ-006),
   Korrektur A11 und A16 (REQ-011, REQ-016);
-  `datenmodell-und-ablaeufe.md` §Datenmodell („unveränderlich“),
-  §Korrektur / Inventur; `spezifikation.md`
+  [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md) §Datenmodell („unveränderlich“),
+  §Korrektur / Inventur; [spezifikation.md](../spezifikation.md)
   §Datenbankschema; Commit `3b6f6b4` („Bewegungen per
   Trigger unveränderlich“)
 - **Nachbarschaft:** DEC-004, DEC-006 — geprüft, kein
@@ -427,9 +429,9 @@ _(chronologisch nach ID)_
   Deaktivierte lassen sich nicht bebuchen, aber wieder
   aktivieren. Begründung und verworfene Alternativen sind
   nicht dokumentiert.
-- **Verweise:** Herkunft `anforderungen.md` A24 bis A26
-  (REQ-024 bis REQ-026); `datenmodell-und-ablaeufe.md`
-  §Artikel oder Lagerort entfernen; `spezifikation.md`
+- **Verweise:** Herkunft [anforderungen.md](../anforderungen.md) A24 bis A26
+  (REQ-024 bis REQ-026); [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
+  §Artikel oder Lagerort entfernen; [spezifikation.md](../spezifikation.md)
   §Stammdatenmenü (Befehle 3, 4, 7, 8)
 - **Nachbarschaft:** DEC-004, DEC-005 — geprüft, kein
   Widerspruch
@@ -440,9 +442,9 @@ _(chronologisch nach ID)_
 - **Wahl und Begründung:** Java 21; zum Bauen und Starten
   Java 21 oder neuer. Begründung und verworfene
   Alternativen sind nicht dokumentiert.
-- **Verweise:** Herkunft `pom.xml`
-  (`maven.compiler.release`); `spezifikation.md` §Technik
-  und Start; `CLAUDE-vorgefunden.md` (Kopf); Commit
+- **Verweise:** Herkunft [pom.xml](../pom.xml)
+  (`maven.compiler.release`); [spezifikation.md](../spezifikation.md) §Technik
+  und Start; [CLAUDE-vorgefunden.md](../CLAUDE-vorgefunden.md) (Kopf); Commit
   `3b6f6b4`
 - **Nachbarschaft:** DEC-008 bis DEC-011 — geprüft, kein
   Widerspruch
@@ -455,9 +457,9 @@ _(chronologisch nach ID)_
   angebunden über den Treiber `org.xerial:sqlite-jdbc`.
   Begründung und verworfene Alternativen sind nicht
   dokumentiert.
-- **Verweise:** Herkunft `pom.xml`; `spezifikation.md`
+- **Verweise:** Herkunft [pom.xml](../pom.xml); [spezifikation.md](../spezifikation.md)
   §Technik und Start, §Datenbankschema;
-  `CLAUDE-vorgefunden.md` (Kopf); Commit `3b6f6b4`
+  [CLAUDE-vorgefunden.md](../CLAUDE-vorgefunden.md) (Kopf); Commit `3b6f6b4`
 - **Nachbarschaft:** DEC-001, DEC-004, DEC-007, DEC-010 —
   geprüft, kein Widerspruch
 - **Detail:** [[DEC-008 SQLite als Datenbank ueber sqlite-jdbc]]
@@ -466,11 +468,11 @@ _(chronologisch nach ID)_
 
 - **Status:** umgesetzt — **Datum:** 2026-11-09
 - **Wahl und Begründung:** Maven baut, testet und packt das
-  Programm; `lager.sh` ruft Maven bei Bedarf auf.
+  Programm; [lager.sh](../lager.sh) ruft Maven bei Bedarf auf.
   Begründung und verworfene Alternativen sind nicht
   dokumentiert.
-- **Verweise:** Herkunft `pom.xml`; `lager.sh`;
-  `spezifikation.md` §Technik und Start
+- **Verweise:** Herkunft [pom.xml](../pom.xml); [lager.sh](../lager.sh);
+  [spezifikation.md](../spezifikation.md) §Technik und Start
 - **Nachbarschaft:** DEC-007, DEC-010, DEC-011, DEC-012 —
   geprüft, kein Widerspruch
 - **Detail:** [[DEC-009 Build mit Maven]]
@@ -482,8 +484,8 @@ _(chronologisch nach ID)_
   SQLite-Treiber in eine einzige ausführbare Datei
   `target/lagerverwaltung.jar`. Begründung und verworfene
   Alternativen sind nicht dokumentiert.
-- **Verweise:** Herkunft `pom.xml` (`maven-shade-plugin`);
-  `spezifikation.md` §Technik und Start; `lager.sh`
+- **Verweise:** Herkunft [pom.xml](../pom.xml) (`maven-shade-plugin`);
+  [spezifikation.md](../spezifikation.md) §Technik und Start; [lager.sh](../lager.sh)
 - **Nachbarschaft:** DEC-008, DEC-009 — geprüft, kein
   Widerspruch
 - **Detail:** [[DEC-010 Eine ausfuehrbare JAR-Datei mit SQLite-Treiber]]
@@ -496,8 +498,8 @@ _(chronologisch nach ID)_
   `maven-surefire-plugin`. Anlass laut Quelle: Jede
   Anforderung soll ihren Test finden. Begründung der Wahl
   und verworfene Alternativen sind nicht dokumentiert.
-- **Verweise:** Herkunft Commit `2eb6d29`; `pom.xml`;
-  `spezifikation.md` §Prüfen
+- **Verweise:** Herkunft Commit `2eb6d29`; [pom.xml](../pom.xml);
+  [spezifikation.md](../spezifikation.md) §Prüfen
 - **Nachbarschaft:** DEC-009, DEC-012 — geprüft, kein
   Widerspruch
 - **Detail:** [[DEC-011 Tests mit JUnit Jupiter ueber Surefire]]
@@ -506,14 +508,14 @@ _(chronologisch nach ID)_
 
 - **Status:** umgesetzt — **Datum:** 2026-11-09
 - **Wahl und Begründung:** Die Tests laufen bei jedem
-  `mvn package`, also auch in `lager.sh`; schlägt ein Test
+  `mvn package`, also auch in [lager.sh](../lager.sh); schlägt ein Test
   fehl, startet das Programm nicht. Laut Quelle „gewollt;
   wer trotzdem starten will, baut mit
   `mvn package -DskipTests`“. Verworfene Alternativen sind
   nicht dokumentiert.
-- **Verweise:** Herkunft Commit `2eb6d29`; `pom.xml`
+- **Verweise:** Herkunft Commit `2eb6d29`; [pom.xml](../pom.xml)
   (Kommentar zum `maven-surefire-plugin`);
-  `spezifikation.md` §Prüfen
+  [spezifikation.md](../spezifikation.md) §Prüfen
 - **Nachbarschaft:** DEC-009, DEC-011 — geprüft, kein
   Widerspruch
 

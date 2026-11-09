@@ -20,8 +20,10 @@ steht.
 ## Betrachtete Optionen
 
 - Bestand aus den Bewegungen berechnen (gewählt)
-- eigene Bestandstabelle neben den Bewegungen — genannt in
-  `datenmodell-und-ablaeufe.md` §Bestand
+- eigene Bestandstabelle neben den Bewegungen — nur
+  erwähnt im Begründungssatz von
+  `datenmodell-und-ablaeufe.md` §Bestand; dass sie
+  ausdrücklich betrachtet wurde, ist nicht dokumentiert
 
 ## Entscheidung
 
@@ -51,9 +53,10 @@ gibt, können Bestand und Protokoll nie voneinander abweichen.“
 
 ## Verworfen und warum
 
-- **Eigene Bestandstabelle:** Bestand und Protokoll könnten
-  voneinander abweichen (`datenmodell-und-ablaeufe.md`
-  §Bestand).
+- **Eigene Bestandstabelle** (abgeleitet aus dem
+  Begründungssatz der Quelle, keine dokumentierte
+  Abwägung): Bestand und Protokoll könnten voneinander
+  abweichen (`datenmodell-und-ablaeufe.md` §Bestand).
 
 ## Verweise
 
@@ -67,6 +70,12 @@ gibt, können Bestand und Protokoll nie voneinander abweichen.“
 ## Vermerke
 
 _(append-only)_
+
+- 2026-11-09 — „Betrachtete Optionen“ und „Verworfen und
+  warum“ als Ableitung aus dem Begründungssatz der Quelle
+  gekennzeichnet; vorher war die eigene Bestandstabelle als
+  belegt verworfene Alternative dargestellt (Prüfbericht
+  REP-001, Befund 4).
 
 ## Bezüge
 
