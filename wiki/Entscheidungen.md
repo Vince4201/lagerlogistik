@@ -319,8 +319,23 @@ active: true   # kann nicht deaktiviert werden — Entscheidungen ist Pflicht-Fa
 
 ---
 
-**Bearbeitungsstand:** _(vom Agenten beim Ingest und laufend
-gepflegt)_
+**Bearbeitungsstand:** 2026-11-09 — Migration Phase 3:
+DEC-001 bis DEC-012 als Bestand übernommen aus
+`anforderungen.md`, `datenmodell-und-ablaeufe.md`,
+`spezifikation.md`, `pom.xml`, `lager.sh`,
+`CLAUDE-vorgefunden.md` und der Git-Historie bis Commit
+`2eb6d29`; Reihenfolge nach Sache
+(Rahmen, Bestand und Bewegungen, Technologie, Verfahren).
+Bestand trägt weder Zielmarke noch Anlage-Datum; Status
+`umgesetzt` nach Beleg in `pom.xml` und `spezifikation.md`
+(beschreibt das Verhalten des Codes), Status-Datum ist der
+Buchungstag. Was die Quellen an Begründung und verworfenen
+Alternativen nicht nennen, steht als „nicht dokumentiert“.
+DEC-013 bis DEC-017 sind neu (Ordner-Freigaben aus dem
+Fragen-Block, mit Zielmarke und Anlage-Datum); DEC-018 ist
+für die Gesamt-Annahme der Migrations-Grundlagen
+reserviert (Detail-Knoten [[Migrations-Grundlagen]], die
+Register-Zeile folgt nach Phase 4).
 
 Eine chronologische Liste — keine Trennung offen /
 getroffen, der Status trägt die Unterscheidung.
@@ -328,3 +343,261 @@ getroffen, der Status trägt die Unterscheidung.
 ## Einträge
 
 _(chronologisch nach ID)_
+
+### DEC-001 — Einzelplatz-Anwendung: ein Benutzer an einem Rechner
+
+- **Status:** umgesetzt — **Datum:** 2026-11-09
+- **Wahl und Begründung:** Die Lagerverwaltung ist eine
+  Einzelplatz-Anwendung, ein Benutzer an einem Rechner.
+  Begründung und verworfene Alternativen sind nicht
+  dokumentiert.
+- **Verweise:** Herkunft `anforderungen.md` A01 (§Rahmen),
+  übernommen als REQ-001; `spezifikation.md` §Prüfen
+  (`DatenbankTest` prüft für A01 die lokale Datei)
+- **Nachbarschaft:** DEC-002, DEC-003, DEC-008 — geprüft,
+  kein Widerspruch
+
+### DEC-002 — Bedienung im Terminal über Menüs
+
+- **Status:** umgesetzt — **Datum:** 2026-11-09
+- **Wahl und Begründung:** Die Lagerverwaltung wird im
+  Terminal über Menüs bedient (Hauptmenü und
+  Stammdatenmenü). Begründung und verworfene Alternativen
+  sind nicht dokumentiert.
+- **Verweise:** Herkunft `anforderungen.md` A02 (§Rahmen),
+  übernommen als REQ-002; `spezifikation.md` §Hauptmenü,
+  §Stammdatenmenü; Commit `3b6f6b4` („menügeführte
+  Terminal-Anwendung“)
+- **Nachbarschaft:** DEC-001, DEC-007 — geprüft, kein
+  Widerspruch
+
+### DEC-003 — Nur Mengen, keine Preise
+
+- **Status:** umgesetzt — **Datum:** 2026-11-09
+- **Wahl und Begründung:** Die Lagerverwaltung verwaltet nur
+  Mengen; Preise kommen nicht vor. Begründung und
+  verworfene Alternativen sind nicht dokumentiert.
+- **Verweise:** Herkunft `anforderungen.md` A03 (§Rahmen),
+  übernommen als REQ-003; `spezifikation.md` §Prüfen
+  (`DatenbankTest` prüft, dass es keine Preise gibt);
+  Commit `2eb6d29` („keine Preisspalten“)
+- **Nachbarschaft:** DEC-001, DEC-004 — geprüft, kein
+  Widerspruch
+
+### DEC-004 — Bestand nur aus den Bewegungen berechnet
+
+- **Status:** umgesetzt — **Datum:** 2026-11-09
+- **Wahl und Begründung:** Gespeichert werden Artikel,
+  Lagerorte und Bewegungen; der Bestand wird nicht
+  gespeichert, sondern aus den Bewegungen berechnet. Laut
+  Quelle können so Bestand und Protokoll nie voneinander
+  abweichen; verworfen ist eine eigene Bestandstabelle.
+- **Verweise:** Herkunft `anforderungen.md` A05 (REQ-005);
+  `datenmodell-und-ablaeufe.md` §Datenmodell, §Bestand;
+  `spezifikation.md` §Datenbankschema (View `bestand`);
+  Commit `3b6f6b4`
+- **Nachbarschaft:** DEC-005, DEC-006, DEC-008 — geprüft,
+  kein Widerspruch
+- **Detail:** [[DEC-004 Bestand nur aus den Bewegungen berechnet]]
+
+### DEC-005 — Gebuchte Bewegungen unveränderlich, Fehler per Korrekturbuchung
+
+- **Status:** umgesetzt — **Datum:** 2026-11-09
+- **Wahl und Begründung:** Gebuchte Bewegungen werden nie
+  geändert oder gelöscht; Fehler werden mit einer
+  Korrekturbuchung ausgeglichen. Die Datenbank erzwingt das
+  mit den Triggern `bewegung_nicht_aendern` und
+  `bewegung_nicht_loeschen`. Begründung und verworfene
+  Alternativen sind nicht dokumentiert.
+- **Verweise:** Herkunft `anforderungen.md` A06 (REQ-006),
+  Korrektur A11 und A16 (REQ-011, REQ-016);
+  `datenmodell-und-ablaeufe.md` §Datenmodell („unveränderlich“),
+  §Korrektur / Inventur; `spezifikation.md`
+  §Datenbankschema; Commit `3b6f6b4` („Bewegungen per
+  Trigger unveränderlich“)
+- **Nachbarschaft:** DEC-004, DEC-006 — geprüft, kein
+  Widerspruch
+
+### DEC-006 — Stammdaten mit Bewegungen deaktivieren statt löschen
+
+- **Status:** umgesetzt — **Datum:** 2026-11-09
+- **Wahl und Begründung:** Artikel und Lagerorte lassen sich
+  löschen, solange es zu ihnen keine Bewegungen gibt; danach
+  nur noch deaktivieren, und das nur ohne Bestand.
+  Deaktivierte lassen sich nicht bebuchen, aber wieder
+  aktivieren. Begründung und verworfene Alternativen sind
+  nicht dokumentiert.
+- **Verweise:** Herkunft `anforderungen.md` A24 bis A26
+  (REQ-024 bis REQ-026); `datenmodell-und-ablaeufe.md`
+  §Artikel oder Lagerort entfernen; `spezifikation.md`
+  §Stammdatenmenü (Befehle 3, 4, 7, 8)
+- **Nachbarschaft:** DEC-004, DEC-005 — geprüft, kein
+  Widerspruch
+
+### DEC-007 — Java 21 als Sprache und Laufzeit
+
+- **Status:** umgesetzt — **Datum:** 2026-11-09
+- **Wahl und Begründung:** Java 21; zum Bauen und Starten
+  Java 21 oder neuer. Begründung und verworfene
+  Alternativen sind nicht dokumentiert.
+- **Verweise:** Herkunft `pom.xml`
+  (`maven.compiler.release`); `spezifikation.md` §Technik
+  und Start; `CLAUDE-vorgefunden.md` (Kopf); Commit
+  `3b6f6b4`
+- **Nachbarschaft:** DEC-008 bis DEC-011 — geprüft, kein
+  Widerspruch
+- **Detail:** [[DEC-007 Java 21 als Sprache und Laufzeit]]
+
+### DEC-008 — SQLite als Datenbank über sqlite-jdbc
+
+- **Status:** umgesetzt — **Datum:** 2026-11-09
+- **Wahl und Begründung:** SQLite in einer Datenbankdatei,
+  angebunden über den Treiber `org.xerial:sqlite-jdbc`.
+  Begründung und verworfene Alternativen sind nicht
+  dokumentiert.
+- **Verweise:** Herkunft `pom.xml`; `spezifikation.md`
+  §Technik und Start, §Datenbankschema;
+  `CLAUDE-vorgefunden.md` (Kopf); Commit `3b6f6b4`
+- **Nachbarschaft:** DEC-001, DEC-004, DEC-007, DEC-010 —
+  geprüft, kein Widerspruch
+- **Detail:** [[DEC-008 SQLite als Datenbank ueber sqlite-jdbc]]
+
+### DEC-009 — Build mit Maven
+
+- **Status:** umgesetzt — **Datum:** 2026-11-09
+- **Wahl und Begründung:** Maven baut, testet und packt das
+  Programm; `lager.sh` ruft Maven bei Bedarf auf.
+  Begründung und verworfene Alternativen sind nicht
+  dokumentiert.
+- **Verweise:** Herkunft `pom.xml`; `lager.sh`;
+  `spezifikation.md` §Technik und Start
+- **Nachbarschaft:** DEC-007, DEC-010, DEC-011, DEC-012 —
+  geprüft, kein Widerspruch
+- **Detail:** [[DEC-009 Build mit Maven]]
+
+### DEC-010 — Eine ausführbare JAR-Datei mit SQLite-Treiber
+
+- **Status:** umgesetzt — **Datum:** 2026-11-09
+- **Wahl und Begründung:** Maven packt Programm und
+  SQLite-Treiber in eine einzige ausführbare Datei
+  `target/lagerverwaltung.jar`. Begründung und verworfene
+  Alternativen sind nicht dokumentiert.
+- **Verweise:** Herkunft `pom.xml` (`maven-shade-plugin`);
+  `spezifikation.md` §Technik und Start; `lager.sh`
+- **Nachbarschaft:** DEC-008, DEC-009 — geprüft, kein
+  Widerspruch
+- **Detail:** [[DEC-010 Eine ausfuehrbare JAR-Datei mit SQLite-Treiber]]
+
+### DEC-011 — Tests mit JUnit Jupiter über Surefire
+
+- **Status:** umgesetzt — **Datum:** 2026-11-09
+- **Wahl und Begründung:** Automatische Tests mit JUnit 6
+  (`junit-jupiter`, nur für Tests), ausgeführt vom
+  `maven-surefire-plugin`. Anlass laut Quelle: Jede
+  Anforderung soll ihren Test finden. Begründung der Wahl
+  und verworfene Alternativen sind nicht dokumentiert.
+- **Verweise:** Herkunft Commit `2eb6d29`; `pom.xml`;
+  `spezifikation.md` §Prüfen
+- **Nachbarschaft:** DEC-009, DEC-012 — geprüft, kein
+  Widerspruch
+- **Detail:** [[DEC-011 Tests mit JUnit Jupiter ueber Surefire]]
+
+### DEC-012 — Tests laufen bei jedem Build mit, ein roter Test verhindert den Start
+
+- **Status:** umgesetzt — **Datum:** 2026-11-09
+- **Wahl und Begründung:** Die Tests laufen bei jedem
+  `mvn package`, also auch in `lager.sh`; schlägt ein Test
+  fehl, startet das Programm nicht. Laut Quelle „gewollt;
+  wer trotzdem starten will, baut mit
+  `mvn package -DskipTests`“. Verworfene Alternativen sind
+  nicht dokumentiert.
+- **Verweise:** Herkunft Commit `2eb6d29`; `pom.xml`
+  (Kommentar zum `maven-surefire-plugin`);
+  `spezifikation.md` §Prüfen
+- **Nachbarschaft:** DEC-009, DEC-011 — geprüft, kein
+  Widerspruch
+
+### DEC-013 — Freigabe: Bestands-Ordner src/
+
+- **Status:** angenommen — **Datum:** 2026-11-09
+- **Angelegt:** 2026-11-09
+- **Zielmarke:** Uebernahme-2026-11-09
+- **Wahl und Begründung:** Der vorgefundene Ordner `src/` bleibt im
+  Repo-Root und ist Code-Bereich: Quelltext unter
+  `src/main/java/`, JUnit-Tests unter `src/test/java/`
+  (Maven-Standardaufbau). Er ist zugleich der von SP-1
+  mitgebrachte Code-Bereich `src/`; der Bestand gilt unter
+  dieser Freigabe. Vorschlag im Fragen-Block
+  der Migration (Phase 1 Nr. 7), vom Anwender am 2026-11-09
+  bestätigt.
+- **Verweise:** `_template/migration/MIGRATION.md` Phase 1
+  Nr. 7 und Phase 3; SP-1-Steckbrief
+  (`_template/referenzprozesse/SP-1-Standardprozess/index.md`)
+  §4.4 Freigabe-Ausnahme für Code-Bereiche; MasterPrompt §1.1
+- **Nachbarschaft:** DEC-009, DEC-014 bis DEC-017 — geprüft, kein Widerspruch
+
+### DEC-014 — Freigabe: Ordner tests/
+
+- **Status:** angenommen — **Datum:** 2026-11-09
+- **Angelegt:** 2026-11-09
+- **Zielmarke:** Uebernahme-2026-11-09
+- **Wahl und Begründung:** Von SP-1 mitgebrachter Code-Bereich für Tests,
+  freigegeben wie beim Init. Der Ordner existiert noch nicht;
+  die vorhandenen Tests liegen nach Maven-Konvention unter
+  `src/test/java/` (DEC-013). Vorschlag im Fragen-Block
+  der Migration (Phase 1 Nr. 7), vom Anwender am 2026-11-09
+  bestätigt.
+- **Verweise:** `_template/migration/MIGRATION.md` Phase 1
+  Nr. 7 und Phase 3; SP-1-Steckbrief
+  (`_template/referenzprozesse/SP-1-Standardprozess/index.md`)
+  §4.4 Freigabe-Ausnahme für Code-Bereiche; MasterPrompt §1.1
+- **Nachbarschaft:** DEC-011, DEC-013 — geprüft, kein Widerspruch
+
+### DEC-015 — Freigabe: Ordner ci/
+
+- **Status:** angenommen — **Datum:** 2026-11-09
+- **Angelegt:** 2026-11-09
+- **Zielmarke:** Uebernahme-2026-11-09
+- **Wahl und Begründung:** Von SP-1 mitgebrachter Code-Bereich für die
+  Build- und Prüf-Automatisierung, freigegeben wie beim Init.
+  Der Ordner existiert noch nicht. Vorschlag im Fragen-Block
+  der Migration (Phase 1 Nr. 7), vom Anwender am 2026-11-09
+  bestätigt.
+- **Verweise:** `_template/migration/MIGRATION.md` Phase 1
+  Nr. 7 und Phase 3; SP-1-Steckbrief
+  (`_template/referenzprozesse/SP-1-Standardprozess/index.md`)
+  §4.4 Freigabe-Ausnahme für Code-Bereiche; MasterPrompt §1.1
+- **Nachbarschaft:** DEC-013, DEC-016 — geprüft, kein Widerspruch
+
+### DEC-016 — Freigabe: Ordner deploy/
+
+- **Status:** angenommen — **Datum:** 2026-11-09
+- **Angelegt:** 2026-11-09
+- **Zielmarke:** Uebernahme-2026-11-09
+- **Wahl und Begründung:** Von SP-1 mitgebrachter Code-Bereich für
+  Auslieferung und Betrieb, freigegeben wie beim Init. Der
+  Ordner existiert noch nicht. Vorschlag im Fragen-Block
+  der Migration (Phase 1 Nr. 7), vom Anwender am 2026-11-09
+  bestätigt.
+- **Verweise:** `_template/migration/MIGRATION.md` Phase 1
+  Nr. 7 und Phase 3; SP-1-Steckbrief
+  (`_template/referenzprozesse/SP-1-Standardprozess/index.md`)
+  §4.4 Freigabe-Ausnahme für Code-Bereiche; MasterPrompt §1.1
+- **Nachbarschaft:** DEC-013, DEC-015 — geprüft, kein Widerspruch
+
+### DEC-017 — Freigabe: Ordner docs/
+
+- **Status:** angenommen — **Datum:** 2026-11-09
+- **Angelegt:** 2026-11-09
+- **Zielmarke:** Uebernahme-2026-11-09
+- **Wahl und Begründung:** Von SP-1 mitgebrachte Ableitungs-Schicht für
+  nach außen gerichtete, selbsttragende Projekt-Doku, aus dem
+  wiki/ abgeleitet und nie Wahrheits-Ort. Der Ordner existiert
+  noch nicht; ein handgeschriebenes `docs/` gab es nicht. Vorschlag im Fragen-Block
+  der Migration (Phase 1 Nr. 7), vom Anwender am 2026-11-09
+  bestätigt.
+- **Verweise:** `_template/migration/MIGRATION.md` Phase 1
+  Nr. 7 und Phase 3; SP-1-Steckbrief
+  (`_template/referenzprozesse/SP-1-Standardprozess/index.md`)
+  §4.4 Freigabe-Ausnahme für Code-Bereiche; MasterPrompt §1.1
+- **Nachbarschaft:** DEC-013 — geprüft, kein Widerspruch
