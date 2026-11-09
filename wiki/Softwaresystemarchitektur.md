@@ -154,8 +154,8 @@ nach ID; Eintragsformat in `## Meta`.)_
 ### ARC-001 — Datenmodell
 
 - **Status:** offen — **Datum:** 2026-11-09
-- **Gestützt auf:** FUNC-003, FUNC-004, FUNC-005, FUNC-006, FUNC-007,
-  FUNC-009
+- **Gestützt auf:** DEC-004, DEC-005, DEC-006, DEC-008, FUNC-003,
+  FUNC-004, FUNC-005, FUNC-006, FUNC-007, FUNC-009
 - **Quelle:** [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
   §Datenmodell — Ist-Stand, Bestand aus der Migration
 - **Detail:** [[ARC-001 Datenmodell]]
@@ -163,7 +163,7 @@ nach ID; Eintragsformat in `## Meta`.)_
 ### ARC-002 — Bestand aus Bewegungen berechnet
 
 - **Status:** offen — **Datum:** 2026-11-09
-- **Gestützt auf:** FUNC-003, FUNC-008
+- **Gestützt auf:** DEC-004, FUNC-003, FUNC-008
 - **Quelle:** [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
   §Datenmodell, §Bestand — Ist-Stand, Bestand aus der Migration
 - **Detail:** [[ARC-002 Bestand aus Bewegungen berechnet]]
@@ -171,7 +171,8 @@ nach ID; Eintragsformat in `## Meta`.)_
 ### ARC-003 — Paketaufbau des Codes
 
 - **Status:** offen — **Datum:** 2026-11-09
-- **Gestützt auf:** FUNC-001, FUNC-002, FUNC-003
+- **Gestützt auf:** DEC-007, DEC-009, DEC-010, FUNC-001, FUNC-002,
+  FUNC-003
 - **Quelle:** [spezifikation.md](../spezifikation.md) §Aufbau des Codes
   — Ist-Stand, Bestand aus der Migration
 - **Detail:** [[ARC-003 Paketaufbau des Codes]]
@@ -206,7 +207,12 @@ mit dem eigenen Repo.)_
 
 | Komponente | Aufgabe | Rolle | Repo-Name | Pfad | Remote | Detail |
 |---|---|---|---|---|---|---|
-| <Name> | <ein Satz> | <Koordinator/Komponente/eigenes Bauteil> | <Qualifizierer> | <lokaler Pfad> | <Remote oder —> | <[[Wikilink]] oder — > |
+| Lagerverwaltung | Einzelplatz-Lagerverwaltung im Terminal: Artikel, Lagerorte und Bewegungen in einer lokalen SQLite-Datei | eigenes Bauteil | lagerlogistik | `.` | https://github.com/Vince4201/lagerlogistik | — |
+
+_(Zeile angelegt am 2026-11-09 nach Prüfbericht REP-001,
+Befund 6; Repo-Name `lagerlogistik` wie auf GitHub, vom
+Anwender gewählt. Der lokale Ordner heißt `largerlogistik`,
+das Maven-Artefakt `lagerverwaltung`.)_
 
 ## Stilkonvention
 

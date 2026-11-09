@@ -27,8 +27,10 @@ Weil es keine eigene Bestandstabelle gibt, können Bestand und Protokoll
 nie voneinander abweichen (Begründung aus der Herkunfts-Datei). Der
 [[FUNC-003 Gemeinsamer Buchungsablauf]] berechnet nach jeder Buchung
 den Gesamtbestand neu, die [[FUNC-008 Auswertungen]] lesen die
-Bestände. Die Festlegung samt verworfener Alternative (eine eigene
-Bestandstabelle) steht in [[DEC-004 Bestand nur aus den Bewegungen berechnet]].
+Bestände. Die Festlegung steht in
+[[DEC-004 Bestand nur aus den Bewegungen berechnet]]; die eigene
+Bestandstabelle als Alternative ist dort aus dem Begründungssatz der
+Quelle abgeleitet, eine Abwägung ist nicht dokumentiert.
 
 ## Vermerke
 
