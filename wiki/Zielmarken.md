@@ -1455,12 +1455,23 @@ active: true   # kann nicht deaktiviert werden — Zielmarken ist Pflicht-Fassad
 
 ---
 
-**Bearbeitungsstand:** Vorbelegt beim Starter-Bau — die
-erste Marke ist die Übernahme-Marke
-`Uebernahme-JJJJ-MM-TT`, die die Migration anlegt
-(`_template/migration/MIGRATION.md` Phase 1).
+**Bearbeitungsstand:** Erste Marke ist die
+Übernahme-Marke `Uebernahme-2026-11-09`, angelegt am
+2026-11-09 im Fragen-Block der Migration
+(`_template/migration/MIGRATION.md` Phase 1). Keine
+Marke trägt `current`, bis die erste abgeschlossen ist.
 
 ## Marken
 
-_(in geplanter Abfolge; vom Agenten bei der
-Erst-Definition in der Migration gefüllt)_
+_(in geplanter Abfolge)_
+
+### Uebernahme-2026-11-09 — Übernahme des vorgefundenen Stands
+
+Vorgefundener Stand: Version 1 der Terminal-Lagerverwaltung
+(`pom.xml` Version 1.0) mit Dokumentenkette
+(`anforderungen.md`, `datenmodell-und-ablaeufe.md`,
+`spezifikation.md`), Quelltext unter `src/main/` und
+JUnit-Tests unter `src/test/`, wie am Übernahme-Tag im
+Repository.
+
+- **Zustand:** in-progress

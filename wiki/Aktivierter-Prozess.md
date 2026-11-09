@@ -45,13 +45,8 @@ type: internal-rule
 - **Prozess:** RP-1 (setzt SP-1 voraus; beide beim
   Starter-Bau gemergt — Phase A0 und Prozess-Merge
   vorab vollzogen)
-- **Rolle:** offen (Fragen-Block der Migration,
-  `_template/migration/MIGRATION.md` Phase 1; bei
-  Rolle Koordinator aktiviert die Migration den
-  Contract-Index nach seinem SP-1-Bootstrap in
-  Phase 5)
-- **Übernahme-Art:** — (Rolle offen; bei Rolle
-  Komponent trägt die Migration sie ein)
+- **Rolle:** Standalone
+- **Übernahme-Art:** —
 
 Format der Zeilen: [[Init-Choreografie]] §Phase A0
 „Herkunfts-Vermerk“ — der Lint liest aus
