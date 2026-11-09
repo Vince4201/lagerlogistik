@@ -108,8 +108,9 @@ _(Register: [[Entscheidungen]])_
 
 ## agent-report
 
-_(wird beim Abschluss von Sub-Agent-Aufträgen
-angelegt; Register: [[Agent-Berichte]])_
+- **[[REP-001 — Absicherungs-Review Migration Pruefer 1]]** — Absicherungs-Review der Migration, Prüfer 1, Ampel gelb.
+
+_(Register: [[Agent-Berichte]])_
 
 ## research-artifact
 
