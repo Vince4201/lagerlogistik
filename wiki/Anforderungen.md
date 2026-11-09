@@ -278,16 +278,237 @@ Wahl von SP-1 (Wiki.md §11 Prozess-Teil-Wikis).
 
 ---
 
-**Bearbeitungsstand:** _(vom Agenten beim Ingest und laufend
-gepflegt)_
+**Bearbeitungsstand:** 2026-11-09 — Migration: Bestand aus
+`anforderungen.md` übernommen, A01 bis A33 als REQ-001 bis
+REQ-033 in der Reihenfolge der Datei. Der Kurzsatz ist der Satz
+der Datei, wörtlich ohne Schlusspunkt; nur in A02, A03 und A25
+steht das Bezugswort statt des Pronomens. Die Zeile Quelle nennt
+Nummer und Abschnitt der Herkunft, bei §Harte Regeln und
+§Mindestbestand mit dem Einleitungssatz des Abschnitts. Bestand
+trägt weder Feld Zielmarke noch Zeile Angelegt. Status
+`umgesetzt` nach Beleg: im Code unter `src/` umgesetzt, je
+Anforderung mindestens ein JUnit-Test unter `src/test/`, dessen
+`@DisplayName` mit ihrer Nummer beginnt (z. B. „A14 …“); einen
+Testbericht gibt es noch nicht.
 
 ## Funktional
 
 _(Einträge nach ID sortiert, chronologisch angelegt)_
 
+### REQ-003 — Die Lagerverwaltung verwaltet nur Mengen, Preise kommen nicht vor
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A03 (§Rahmen)
+
+### REQ-004 — Ein Artikel kann an beliebig vielen Lagerorten liegen, und ein Lagerort kann beliebig viele Artikel enthalten
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A04 (§Lager und Bestand)
+
+### REQ-005 — Jede Bestandsänderung wird als Bewegung protokolliert, und der Bestand ergibt sich allein aus den Bewegungen
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A05 (§Lager und Bestand)
+
+### REQ-006 — Gebuchte Bewegungen werden nie geändert oder gelöscht; Fehler werden mit einer Korrekturbuchung ausgeglichen
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A06 (§Lager und Bestand)
+
+### REQ-007 — Mengen sind ganze Zahlen, die Einheit ist nur ein Anzeigetext
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A07 (§Lager und Bestand)
+
+### REQ-008 — Ein Wareneingang erhöht den Bestand eines Artikels an einem Ziel-Lagerort
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A08 (§Buchungen)
+
+### REQ-009 — Ein Warenausgang senkt den Bestand eines Artikels an einem Quell-Lagerort
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A09 (§Buchungen)
+
+### REQ-010 — Eine Umlagerung bringt eine Menge eines Artikels von einem Lagerort an einen anderen, ohne den Gesamtbestand zu ändern
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A10 (§Buchungen)
+
+### REQ-011 — Bei einer Korrektur (Inventur) wird der gezählte Bestand an einem Lagerort übernommen und die Differenz zum gebuchten Bestand gebucht
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A11 (§Buchungen)
+
+### REQ-012 — Die Menge einer Buchung ist größer als 0
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A12 (§Harte Regeln: „Ist eine
+  davon verletzt, wird die Buchung abgelehnt.“)
+
+### REQ-013 — Gebucht wird nur auf Artikel und Lagerorte, die existieren und aktiv sind
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A13 (§Harte Regeln: „Ist eine
+  davon verletzt, wird die Buchung abgelehnt.“)
+
+### REQ-014 — Entnommen wird höchstens, was an dem Lagerort liegt, sodass kein Lagerort negativ wird
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A14 (§Harte Regeln: „Ist eine
+  davon verletzt, wird die Buchung abgelehnt.“)
+
+### REQ-015 — Bei einer Umlagerung sind Quelle und Ziel verschieden
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A15 (§Harte Regeln: „Ist eine
+  davon verletzt, wird die Buchung abgelehnt.“)
+
+### REQ-016 — Eine Korrektur braucht eine Begründung
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A16 (§Harte Regeln: „Ist eine
+  davon verletzt, wird die Buchung abgelehnt.“)
+
+### REQ-017 — Jeder Artikel hat einen Mindestbestand, der für seinen Gesamtbestand über alle Lagerorte gilt; 0 heißt keine Überwachung
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A17 (§Mindestbestand: „Eine
+  weiche Regel: Die Buchung wird ausgeführt, danach kommt eine
+  Warnung.“)
+
+### REQ-018 — Nach jeder Buchung, die den Gesamtbestand senkt, wird gewarnt, wenn er danach unter dem Mindestbestand liegt, auch wenn er schon vorher darunter lag
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A18 (§Mindestbestand: „Eine
+  weiche Regel: Die Buchung wird ausgeführt, danach kommt eine
+  Warnung.“)
+
+### REQ-019 — Eine Umlagerung löst nie eine Mindestbestandswarnung aus
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A19 (§Mindestbestand: „Eine
+  weiche Regel: Die Buchung wird ausgeführt, danach kommt eine
+  Warnung.“)
+
+### REQ-020 — Beim Programmstart weist das Programm darauf hin, wenn Artikel unter dem Mindestbestand liegen
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A20 (§Mindestbestand: „Eine
+  weiche Regel: Die Buchung wird ausgeführt, danach kommt eine
+  Warnung.“)
+
+### REQ-021 — Ein Artikel hat eine Nummer, eine Bezeichnung, eine Einheit (Standard Stk) und einen Mindestbestand
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A21 (§Stammdaten)
+
+### REQ-022 — Ein Lagerort hat einen Code (z. B. A-01-03) und eine optionale Bezeichnung
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A22 (§Stammdaten)
+
+### REQ-023 — Nummern und Codes sind eindeutig, unveränderlich und werden in Großbuchstaben gespeichert
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A23 (§Stammdaten)
+
+### REQ-024 — Artikel und Lagerorte lassen sich löschen, solange es zu ihnen keine Bewegungen gibt
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A24 (§Stammdaten)
+
+### REQ-025 — Gibt es Bewegungen, lassen sich Artikel und Lagerorte nur noch deaktivieren, und das nur, wenn sie keinen Bestand haben
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A25 (§Stammdaten)
+
+### REQ-026 — Deaktivierte Artikel und Lagerorte lassen sich nicht bebuchen, aber wieder aktivieren
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A26 (§Stammdaten)
+
+### REQ-027 — Das Programm zeigt je Artikel den Gesamtbestand und die Verteilung auf die Lagerorte
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A27 (§Auswertungen)
+
+### REQ-028 — Das Programm zeigt je Lagerort, welche Artikel in welcher Menge dort liegen
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A28 (§Auswertungen)
+
+### REQ-029 — Das Programm listet alle Artikel unter dem Mindestbestand mit ihrer Fehlmenge
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A29 (§Auswertungen)
+
+### REQ-030 — Das Programm zeigt das Bewegungsprotokoll, filterbar nach Artikel und Lagerort
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A30 (§Auswertungen)
+
+### REQ-031 — Falsche Eingaben werden erneut abgefragt
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A31 (§Bedienung)
+
+### REQ-032 — Eine leere Eingabe bricht den laufenden Vorgang ab
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A32 (§Bedienung)
+
+### REQ-033 — Mit `?` lässt sich eine Auswahlliste anzeigen
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A33 (§Bedienung)
+
 ## Nicht-funktional
 
 _(Einträge nach ID sortiert, chronologisch angelegt)_
+
+### REQ-001 — Die Lagerverwaltung ist eine Einzelplatz-Anwendung: ein Benutzer an einem Rechner
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A01 (§Rahmen)
+
+### REQ-002 — Die Lagerverwaltung wird im Terminal über Menüs bedient
+
+- **Status:** umgesetzt
+- **Datum:** 2026-11-09
+- **Quelle:** `anforderungen.md`, A02 (§Rahmen)
 
 ## Fehlerbehebungen
 

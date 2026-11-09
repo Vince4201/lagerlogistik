@@ -63,9 +63,20 @@ active: true   # Pflicht durch SP-1 (der Konzept-Stand kopiert die Rollen; Wiki.
 
 ---
 
-**Bearbeitungsstand:** _(vom Agenten beim Ingest und laufend
-gepflegt)_
+**Bearbeitungsstand:** 2026-11-09 — Migration: Rolle Benutzer
+aus `anforderungen.md` A01 übernommen (Bestand), nur mit dem, was
+dort steht.
 
 ## Einträge
 
 _(Rollen alphabetisch sortiert)_
+
+### Benutzer
+
+- **Art:** verwendungsrolle
+- **Status:** aktiv
+- **Datum:** 2026-11-09
+- **Kurzbeschreibung:** ein Benutzer an einem Rechner — die
+  Lagerverwaltung ist eine Einzelplatz-Anwendung.
+- **Verwendet in:** REQ-001 ([[Anforderungen]])
+- **Quelle:** `anforderungen.md`, A01 (§Rahmen)
