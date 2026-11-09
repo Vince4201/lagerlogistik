@@ -91,10 +91,88 @@ der Phase P4 „Beschreiben der Funktion“.
 
 ---
 
-**Bearbeitungsstand:** _(vom Agenten bei Anlage und laufend
-gepflegt)_
+**Bearbeitungsstand:** 2026-11-09 — Migration: die Abläufe aus
+`datenmodell-und-ablaeufe.md` und die Befehle aus `spezifikation.md`
+als Bestand übernommen, je Funktion ein Eintrag mit beiden
+Herkunfts-Dateien.
 
 ## Funktionsbeschreibungen
 
-_(chronologisch nach ID; vom Agenten bei der ersten
-Funktionsbeschreibung gefüllt)_
+_(chronologisch nach ID; Einträge ohne Angelegt und Zielmarke sind
+Bestand aus der Migration.)_
+
+### FUNC-001 — Programmstart
+
+- **Gegenstand:** Programmstart
+- **Status:** offen — **Datum:** 2026-11-09
+- **Quelle:** [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
+  §Programmstart; [spezifikation.md](../spezifikation.md) §Programmstart
+- **Detail:** [[FUNC-001 Programmstart]]
+
+### FUNC-002 — Bedienung im Terminal
+
+- **Gegenstand:** Bedienung: Hauptmenü, Eingaberegeln, Sortierung und
+  Anzeige
+- **Status:** offen — **Datum:** 2026-11-09
+- **Quelle:** [spezifikation.md](../spezifikation.md) §Eingaben,
+  §Hauptmenü, §Sortierung und Anzeige (sichtbarer Teil)
+- **Detail:** [[FUNC-002 Bedienung im Terminal]]
+
+### FUNC-003 — Gemeinsamer Buchungsablauf
+
+- **Gegenstand:** Buchung (alle vier Buchungsarten)
+- **Status:** offen — **Datum:** 2026-11-09
+- **Quelle:** [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
+  §Buchung, gilt für alle vier Arten
+- **Detail:** [[FUNC-003 Gemeinsamer Buchungsablauf]]
+
+### FUNC-004 — Wareneingang
+
+- **Gegenstand:** Wareneingang (Einlagern)
+- **Status:** offen — **Datum:** 2026-11-09
+- **Quelle:** [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
+  §Wareneingang; [spezifikation.md](../spezifikation.md) §1 Wareneingang
+- **Detail:** [[FUNC-004 Wareneingang]]
+
+### FUNC-005 — Warenausgang
+
+- **Gegenstand:** Warenausgang (Auslagern)
+- **Status:** offen — **Datum:** 2026-11-09
+- **Quelle:** [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
+  §Warenausgang; [spezifikation.md](../spezifikation.md) §2 Warenausgang
+- **Detail:** [[FUNC-005 Warenausgang]]
+
+### FUNC-006 — Umlagerung
+
+- **Gegenstand:** Umlagerung
+- **Status:** offen — **Datum:** 2026-11-09
+- **Quelle:** [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
+  §Umlagerung; [spezifikation.md](../spezifikation.md) §3 Umlagerung
+- **Detail:** [[FUNC-006 Umlagerung]]
+
+### FUNC-007 — Korrektur und Inventur
+
+- **Gegenstand:** Korrektur / Inventur
+- **Status:** offen — **Datum:** 2026-11-09
+- **Quelle:** [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
+  §Korrektur / Inventur; [spezifikation.md](../spezifikation.md)
+  §4 Korrektur / Inventur
+- **Detail:** [[FUNC-007 Korrektur und Inventur]]
+
+### FUNC-008 — Auswertungen
+
+- **Gegenstand:** Auswertungen (Bestand je Artikel, Bestand je
+  Lagerort, Artikel unter Mindestbestand, Bewegungsprotokoll)
+- **Status:** offen — **Datum:** 2026-11-09
+- **Quelle:** [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
+  §Auswerten; [spezifikation.md](../spezifikation.md) §5 bis §8
+- **Detail:** [[FUNC-008 Auswertungen]]
+
+### FUNC-009 — Stammdatenpflege
+
+- **Gegenstand:** Stammdaten (Artikel und Lagerorte)
+- **Status:** offen — **Datum:** 2026-11-09
+- **Quelle:** [datenmodell-und-ablaeufe.md](../datenmodell-und-ablaeufe.md)
+  §Artikel oder Lagerort anlegen und bearbeiten, §Artikel oder Lagerort
+  entfernen; [spezifikation.md](../spezifikation.md) §Stammdatenmenü
+- **Detail:** [[FUNC-009 Stammdatenpflege]]
