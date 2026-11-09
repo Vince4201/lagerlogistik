@@ -3,13 +3,13 @@ type: test-case
 id: TEST-021
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-018]
 ---
 
 # TEST-021 — Buchungen, die den Gesamtbestand erhöhen, warnen nicht
 
-Automatisierter Systemtest (JUnit) zu REQ-018 (Anforderung A18 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-018 (Anforderung A18 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

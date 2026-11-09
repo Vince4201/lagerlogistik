@@ -3,13 +3,13 @@ type: test-case
 id: TEST-010
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-009]
 ---
 
 # TEST-010 — Ein Warenausgang senkt den Bestand am Quell-Lagerort
 
-Automatisierter Systemtest (JUnit) zu REQ-009 (Anforderung A09 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-009 (Anforderung A09 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

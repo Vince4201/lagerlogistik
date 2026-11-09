@@ -3,13 +3,13 @@ type: test-case
 id: TEST-009
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-008]
 ---
 
 # TEST-009 — Ein Wareneingang erhöht den Bestand am Ziel-Lagerort
 
-Automatisierter Systemtest (JUnit) zu REQ-008 (Anforderung A08 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-008 (Anforderung A08 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

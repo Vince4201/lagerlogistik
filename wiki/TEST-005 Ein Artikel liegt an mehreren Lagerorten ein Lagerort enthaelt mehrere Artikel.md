@@ -3,13 +3,13 @@ type: test-case
 id: TEST-005
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-004]
 ---
 
 # TEST-005 — Ein Artikel liegt an mehreren Lagerorten, ein Lagerort enthält mehrere Artikel
 
-Automatisierter Systemtest (JUnit) zu REQ-004 (Anforderung A04 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-004 (Anforderung A04 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

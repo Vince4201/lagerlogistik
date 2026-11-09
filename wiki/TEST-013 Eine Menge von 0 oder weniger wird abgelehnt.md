@@ -3,13 +3,13 @@ type: test-case
 id: TEST-013
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-012]
 ---
 
 # TEST-013 — Eine Menge von 0 oder weniger wird abgelehnt
 
-Automatisierter Systemtest (JUnit) zu REQ-012 (Anforderung A12 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-012 (Anforderung A12 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

@@ -3,13 +3,13 @@ type: test-case
 id: TEST-001
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-001]
 ---
 
 # TEST-001 — Alle Daten liegen in einer einzigen lokalen Datei, ein Server ist nicht nötig
 
-Automatisierter Systemtest (JUnit) zu REQ-001 (Anforderung A01 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-001 (Anforderung A01 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

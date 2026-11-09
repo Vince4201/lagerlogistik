@@ -3,13 +3,13 @@ type: test-case
 id: TEST-017
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-016]
 ---
 
 # TEST-017 — Eine Korrektur ohne Begründung wird abgelehnt
 
-Automatisierter Systemtest (JUnit) zu REQ-016 (Anforderung A16 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-016 (Anforderung A16 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

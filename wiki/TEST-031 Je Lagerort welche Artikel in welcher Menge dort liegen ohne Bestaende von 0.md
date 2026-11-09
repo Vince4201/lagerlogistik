@@ -3,13 +3,13 @@ type: test-case
 id: TEST-031
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-028]
 ---
 
 # TEST-031 — Je Lagerort: welche Artikel in welcher Menge dort liegen, ohne Bestände von 0
 
-Automatisierter Systemtest (JUnit) zu REQ-028 (Anforderung A28 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-028 (Anforderung A28 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

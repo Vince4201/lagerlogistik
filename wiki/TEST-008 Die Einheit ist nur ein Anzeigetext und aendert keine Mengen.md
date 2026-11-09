@@ -3,13 +3,13 @@ type: test-case
 id: TEST-008
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-007]
 ---
 
 # TEST-008 — Die Einheit ist nur ein Anzeigetext und ändert keine Mengen
 
-Automatisierter Systemtest (JUnit) zu REQ-007 (Anforderung A07 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-007 (Anforderung A07 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

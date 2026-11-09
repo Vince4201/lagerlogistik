@@ -3,13 +3,13 @@ type: test-case
 id: TEST-033
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-030]
 ---
 
 # TEST-033 — Bewegungsprotokoll in Buchungsreihenfolge, filterbar nach Artikel und Lagerort
 
-Automatisierter Systemtest (JUnit) zu REQ-030 (Anforderung A30 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-030 (Anforderung A30 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

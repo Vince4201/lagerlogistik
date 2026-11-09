@@ -3,13 +3,13 @@ type: test-case
 id: TEST-002
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-003]
 ---
 
 # TEST-002 — Keine Tabelle hat eine Spalte für Preise oder Werte
 
-Automatisierter Systemtest (JUnit) zu REQ-003 (Anforderung A03 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-003 (Anforderung A03 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

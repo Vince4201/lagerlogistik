@@ -3,13 +3,13 @@ type: test-case
 id: TEST-011
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-010]
 ---
 
 # TEST-011 — Eine Umlagerung verschiebt die Menge, der Gesamtbestand bleibt gleich
 
-Automatisierter Systemtest (JUnit) zu REQ-010 (Anforderung A10 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-010 (Anforderung A10 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

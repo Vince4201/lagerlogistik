@@ -3,13 +3,13 @@ type: test-case
 id: TEST-004
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-006]
 ---
 
 # TEST-004 — Die Datenbank lehnt das Ändern und Löschen gebuchter Bewegungen ab
 
-Automatisierter Systemtest (JUnit) zu REQ-006 (Anforderung A06 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-006 (Anforderung A06 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

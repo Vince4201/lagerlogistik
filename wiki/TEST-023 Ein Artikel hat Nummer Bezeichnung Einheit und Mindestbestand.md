@@ -3,13 +3,13 @@ type: test-case
 id: TEST-023
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-021]
 ---
 
 # TEST-023 — Ein Artikel hat Nummer, Bezeichnung, Einheit und Mindestbestand
 
-Automatisierter Systemtest (JUnit) zu REQ-021 (Anforderung A21 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-021 (Anforderung A21 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

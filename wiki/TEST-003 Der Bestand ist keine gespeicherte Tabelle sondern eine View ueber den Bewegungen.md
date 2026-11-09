@@ -3,13 +3,13 @@ type: test-case
 id: TEST-003
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-005]
 ---
 
 # TEST-003 — Der Bestand ist keine gespeicherte Tabelle, sondern eine View über den Bewegungen
 
-Automatisierter Systemtest (JUnit) zu REQ-005 (Anforderung A05 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-005 (Anforderung A05 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

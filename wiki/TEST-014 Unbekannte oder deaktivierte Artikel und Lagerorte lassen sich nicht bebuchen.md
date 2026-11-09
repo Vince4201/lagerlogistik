@@ -3,13 +3,13 @@ type: test-case
 id: TEST-014
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-013]
 ---
 
 # TEST-014 — Unbekannte oder deaktivierte Artikel und Lagerorte lassen sich nicht bebuchen
 
-Automatisierter Systemtest (JUnit) zu REQ-013 (Anforderung A13 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-013 (Anforderung A13 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

@@ -3,13 +3,13 @@ type: test-case
 id: TEST-028
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-025]
 ---
 
 # TEST-028 — Mit Bewegungen wird nur deaktiviert, und das nur ohne Bestand
 
-Automatisierter Systemtest (JUnit) zu REQ-025 (Anforderung A25 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-025 (Anforderung A25 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

@@ -3,13 +3,13 @@ type: test-case
 id: TEST-027
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-024]
 ---
 
 # TEST-027 — Ohne Bewegungen werden Artikel und Lagerorte gelöscht
 
-Automatisierter Systemtest (JUnit) zu REQ-024 (Anforderung A24 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-024 (Anforderung A24 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

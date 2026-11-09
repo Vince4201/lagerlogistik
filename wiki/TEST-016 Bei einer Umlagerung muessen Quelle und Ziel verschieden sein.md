@@ -3,13 +3,13 @@ type: test-case
 id: TEST-016
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-015]
 ---
 
 # TEST-016 — Bei einer Umlagerung müssen Quelle und Ziel verschieden sein
 
-Automatisierter Systemtest (JUnit) zu REQ-015 (Anforderung A15 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-015 (Anforderung A15 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

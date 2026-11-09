@@ -3,13 +3,13 @@ type: test-case
 id: TEST-018
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-017]
 ---
 
 # TEST-018 — Der Mindestbestand gilt für den Gesamtbestand über alle Lagerorte
 
-Automatisierter Systemtest (JUnit) zu REQ-017 (Anforderung A17 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-017 (Anforderung A17 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

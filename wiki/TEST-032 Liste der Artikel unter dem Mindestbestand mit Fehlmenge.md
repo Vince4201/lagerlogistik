@@ -3,13 +3,13 @@ type: test-case
 id: TEST-032
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-029]
 ---
 
 # TEST-032 — Liste der Artikel unter dem Mindestbestand mit Fehlmenge
 
-Automatisierter Systemtest (JUnit) zu REQ-029 (Anforderung A29 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-029 (Anforderung A29 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

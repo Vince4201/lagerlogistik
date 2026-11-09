@@ -3,13 +3,13 @@ type: test-case
 id: TEST-006
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-005]
 ---
 
 # TEST-006 — Jede Bestandsänderung steht im Protokoll, der Bestand ergibt sich daraus
 
-Automatisierter Systemtest (JUnit) zu REQ-005 (Anforderung A05 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-005 (Anforderung A05 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

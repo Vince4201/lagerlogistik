@@ -3,13 +3,13 @@ type: test-case
 id: TEST-007
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-006]
 ---
 
 # TEST-007 — Ein Fehler wird mit einer Korrektur ausgeglichen, die falsche Bewegung bleibt stehen
 
-Automatisierter Systemtest (JUnit) zu REQ-006 (Anforderung A06 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-006 (Anforderung A06 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

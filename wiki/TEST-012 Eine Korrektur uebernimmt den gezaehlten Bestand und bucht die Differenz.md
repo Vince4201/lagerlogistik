@@ -3,13 +3,13 @@ type: test-case
 id: TEST-012
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-011]
 ---
 
 # TEST-012 — Eine Korrektur übernimmt den gezählten Bestand und bucht die Differenz
 
-Automatisierter Systemtest (JUnit) zu REQ-011 (Anforderung A11 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-011 (Anforderung A11 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

@@ -3,13 +3,13 @@ type: test-case
 id: TEST-024
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-022]
 ---
 
 # TEST-024 — Ein Lagerort hat einen Code und eine optionale Bezeichnung
 
-Automatisierter Systemtest (JUnit) zu REQ-022 (Anforderung A22 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-022 (Anforderung A22 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

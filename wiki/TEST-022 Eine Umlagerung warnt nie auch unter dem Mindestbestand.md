@@ -3,13 +3,13 @@ type: test-case
 id: TEST-022
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-019]
 ---
 
 # TEST-022 — Eine Umlagerung warnt nie, auch unter dem Mindestbestand
 
-Automatisierter Systemtest (JUnit) zu REQ-019 (Anforderung A19 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-019 (Anforderung A19 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 

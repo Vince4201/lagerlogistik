@@ -3,13 +3,13 @@ type: test-case
 id: TEST-030
 status: offen
 status_date: 2026-11-09
-testart: system
+testart: integration
 prueft: [REQ-027]
 ---
 
 # TEST-030 — Je Artikel: Gesamtbestand und Verteilung auf die Lagerorte
 
-Automatisierter Systemtest (JUnit) zu REQ-027 (Anforderung A27 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
+Automatisierter Integrationstest (JUnit, unterhalb der Konsole) zu REQ-027 (Anforderung A27 im Vorgefundenen). Status kanonisch im Eintrag in [[Testfaelle]]; Ausführung nach [[Softwaresystemtest-Setup]].
 
 ## Vorbedingung
 
