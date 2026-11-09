@@ -53,8 +53,10 @@ Ein Benutzer, der das Lager am eigenen Rechner führt
 
 ## Weiteres
 
-Das Projekt entstand zunächst nach dem „naiven Ansatz“ mit einer
-Dokumentenkette und wurde am 2026-11-09 auf den Referenzprozess
-Softwareentwicklung migriert (Marke `Uebernahme-2026-11-09`,
+Das Projekt begann mit einem einzigen Konzeptdokument `KONZEPT.md`
+(Commit `3b6f6b4`), das am 2026-11-02 in die Dokumentenkette
+`anforderungen.md` → `datenmodell-und-ablaeufe.md` →
+`spezifikation.md` aufgeteilt wurde (Commit `0ef4466`). Am 2026-11-09
+wurde es auf den Referenzprozess Softwareentwicklung migriert (Marke `Uebernahme-2026-11-09`,
 [[Zielmarken]]). Die vorgefundenen Dokumente bleiben als Nachweis
 unverändert im Projekt-Root liegen.
