@@ -91,10 +91,27 @@ Phase P8 „Spezifizieren“.
 
 ---
 
-**Bearbeitungsstand:** _(vom Agenten bei Anlage und laufend
-gepflegt)_
+**Bearbeitungsstand:** 2026-11-09 — Migration: die Teile von
+`spezifikation.md`, die eine Bauanleitung sind (Datenbankschema,
+Umsetzung von Sortierung und Zeitpunkten), als Bestand übernommen; das
+Verhalten der Befehle steht in den [[Funktionsbeschreibungen]].
 
 ## Spezifikationen
 
-_(chronologisch nach ID; vom Agenten bei der ersten
-Spezifikation gefüllt)_
+_(chronologisch nach ID; Einträge ohne Angelegt und Zielmarke sind
+Bestand aus der Migration.)_
+
+### SPEC-001 — Datenbankschema
+
+- **Gegenstand:** Datenbank
+- **Status:** offen — **Datum:** 2026-11-09
+- **Quelle:** [spezifikation.md](../spezifikation.md) §Datenbankschema
+- **Detail:** [[SPEC-001 Datenbankschema]]
+
+### SPEC-002 — Sortierung und Zeitpunkte
+
+- **Gegenstand:** Sortierung und Speicherung von Zeitpunkten
+- **Status:** offen — **Datum:** 2026-11-09
+- **Quelle:** [spezifikation.md](../spezifikation.md) §Sortierung und
+  Anzeige (Umsetzungs-Teil; der sichtbare Teil steht in FUNC-002)
+- **Detail:** [[SPEC-002 Sortierung und Zeitpunkte]]
