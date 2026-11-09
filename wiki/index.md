@@ -109,6 +109,7 @@ _(Register: [[Entscheidungen]])_
 ## agent-report
 
 - **[[REP-001 — Absicherungs-Review Migration Pruefer 1]]** — Absicherungs-Review der Migration, Prüfer 1, Ampel gelb.
+- **[[REP-002 — Absicherungs-Review Migration Pruefer 2]]** — Absicherungs-Review der Migration, Prüfer 2 (Codex), Ampel gelb.
 
 _(Register: [[Agent-Berichte]])_
 
