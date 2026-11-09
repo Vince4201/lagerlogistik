@@ -59,7 +59,12 @@ active: true   # kann nicht deaktiviert werden — InterneMechanik ist Pflicht-F
 
 ---
 
-**Bearbeitungsstand:** _(vom Agenten beim Init und laufend gepflegt)_
+**Bearbeitungsstand:** 2026-11-09 — Migration Phase 3:
+Konventionen und Entwickler-How-tos aus
+`CLAUDE-vorgefunden.md`, `spezifikation.md`, `lager.sh`,
+`pom.xml`, `.gitignore` und der Git-Historie bis Commit
+`2eb6d29` als Bestand eingetragen (je Knoten §Herkunft);
+was das Regelwerk schon regelt, ist nicht doppelt angelegt.
 
 Register des Steuerungs-Wissens dieses Projekts.
 Format pro Eintrag:
@@ -184,6 +189,36 @@ kommt beim Init hinzu)_
   Meilenstein-Anlässe, Meilenstein-Regel „agent-lokal“
   mit Koordinator-Meilenstein, Meilenstein-Vorgang
   (Prozess-mitgebracht, SP-1).
+
+### [[Testname-mit-Anforderungsnummer]]
+
+- **Typ:** internal-rule
+- **Kurzform:** jede Anforderung hat mindestens einen
+  JUnit-Test, dessen Name mit ihrer Nummer beginnt; eine
+  neue Anforderung bringt ihren Test mit (Bestand aus
+  `CLAUDE-vorgefunden.md`).
+
+### [[Keine-Umschreibung-der-Git-Historie]]
+
+- **Typ:** internal-rule
+- **Kurzform:** kein `reset --hard`, kein `push --force`,
+  kein `--amend` auf Commits, die schon auf GitHub liegen;
+  Falsches nimmt `git revert` zurück (Bestand aus
+  `CLAUDE-vorgefunden.md`).
+
+### [[Experimente-auf-eigenem-Branch]]
+
+- **Typ:** internal-rule
+- **Kurzform:** Experimente gehören auf einen eigenen
+  Branch, nicht auf `main` (Bestand aus
+  `CLAUDE-vorgefunden.md`).
+
+### [[Build-und-Laufzeitdaten-nicht-im-Repository]]
+
+- **Typ:** internal-rule
+- **Kurzform:** `target/` und die SQLite-Dateien `*.db`
+  werden nicht eingecheckt, die Liste führt `.gitignore`
+  (Bestand aus `CLAUDE-vorgefunden.md`).
 
 ## internal-procedure
 
@@ -311,6 +346,41 @@ _(mitgelieferte Basis-Muster)_
 - **Kurzform:** `devstate_active.md` im Repo-Root:
   Anlage-Zeitpunkt, Minimal-Skelett, Koordinator-Regel
   (Prozess-mitgebracht, SP-1).
+
+### [[Bauen-und-Starten-mit-lager-sh]]
+
+- **Typ:** internal-pattern
+- **Kurzform:** `./lager.sh [datenbankdatei]` baut bei Bedarf
+  mit Maven samt Tests und startet die JAR-Datei (Bestand aus
+  `spezifikation.md` und `lager.sh`).
+
+### [[Testen-mit-Maven]]
+
+- **Typ:** internal-pattern
+- **Kurzform:** `mvn -q -B test` führt alle JUnit-Tests aus,
+  ohne das Programm zu starten (Bestand aus
+  `spezifikation.md` §Prüfen).
+
+### [[Prueflauf-mit-Beispieldaten]]
+
+- **Typ:** internal-pattern
+- **Kurzform:** kompletter Durchlauf über die Bedienung mit
+  den Eingaben aus `beispieldaten.txt` in einer frischen
+  `test.db` (Bestand aus `spezifikation.md` §Prüfen).
+
+### [[Datenbank-mit-sqlite3-ansehen]]
+
+- **Typ:** internal-pattern
+- **Kurzform:** mit `sqlite3` in die Datenbankdatei schauen,
+  etwa auf die View `bestand` (Bestand aus
+  `spezifikation.md`).
+
+### [[Nachschlagen-in-der-Git-Historie]]
+
+- **Typ:** internal-pattern
+- **Kurzform:** Git-Befehle, mit denen sich nachschlagen
+  lässt, was wann und warum geändert wurde (Bestand aus
+  `CLAUDE-vorgefunden.md`).
 
 ## Einträge (Vorbelegung beim Starter-Bau, Migrations-Pfad)
 
