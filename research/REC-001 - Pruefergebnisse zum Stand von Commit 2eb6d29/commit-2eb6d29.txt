@@ -1,0 +1,35 @@
+commit 2eb6d29f7c93a8778d7678cd24bfeefcd2830da2
+Author:     Vincent Christensen <338490809+Vince4201@users.noreply.github.com>
+AuthorDate: Mon Nov 2 10:26:26 2026 +0100
+Commit:     Vincent Christensen <338490809+Vince4201@users.noreply.github.com>
+CommitDate: Mon Nov 2 10:26:26 2026 +0100
+
+    Test: JUnit-Tests für alle Anforderungen A01 bis A33
+    
+    Das fünfte Glied der Dokumentenkette (Kursskript B020/B030) fehlte:
+    Jede Anforderung soll hinten ihren Test finden. Jetzt 42 Tests in sechs
+    Klassen, jeder beginnt im Namen mit der Nummer seiner Anforderung.
+    
+    - DatenbankTest: lokale Datei, keine Preisspalten, View bestand, Trigger
+    - BuchungenTest, MindestbestandTest, StammdatenTest, AuswertungenTest:
+      Fachlogik über LagerService
+    - LagerKonsoleTest: Bedienung mit eingespielten Eingaben, wie am Terminal
+    
+    Jeder Test arbeitet auf einer eigenen Datenbankdatei in einem
+    temporären Ordner. pom.xml: junit-jupiter 6.1.3 (nur für Tests, nicht
+    in der JAR) und maven-surefire-plugin 3.6.1. Die Tests laufen damit bei
+    jedem mvn package, also auch in lager.sh: Schlägt ein Test fehl, startet
+    das Programm nicht. Das ist gewollt; wer trotzdem starten will, baut mit
+    mvn package -DskipTests.
+    
+    Gegenprobe: Zwei absichtlich eingebaute Fehler (Mindestbestand mit <=,
+    fehlende Prüfung des Bestands an der Quelle) haben 5 bzw. 1 Test rot
+    gemacht. Danach zurückgenommen.
+    
+    Prüfung: mvn test 42 Tests grün; Prüflauf mit beispieldaten.txt ohne
+    Fehler, 12 Bestandsposten, Summe 1907 wie vorher.
+    
+    CLAUDE.md und spezifikation.md beschreiben die Tests und die Prüfung
+    vor Code- und Test-Commits.
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

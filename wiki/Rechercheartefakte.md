@@ -57,9 +57,23 @@ type: research-artifact-log
 
 ---
 
-**Bearbeitungsstand:** _(vom Agenten beim Ingest und laufend
-gepflegt)_
+**Bearbeitungsstand:** 2026-11-09 — REC-001 in der Migration
+angelegt (alte Prüfergebnisse aus der Git-Historie).
 
 ## Einträge
 
 _(chronologisch nach ID)_
+
+### REC-001 — Prüfergebnisse zum Stand von Commit 2eb6d29
+
+- **Quelle(n) + Datum:** Nachricht von Commit `2eb6d29`
+  (2026-11-02), archiviert unter
+  `research/REC-001 - Pruefergebnisse zum Stand von Commit 2eb6d29/`;
+  abgelegt am 2026-11-09
+- **Frage:** Welche Prüfergebnisse hielt das Projekt vor der
+  Migration fest, und was ist das Soll-Ergebnis des Prüflaufs?
+- **Kern-Ergebnis:** 42 JUnit-Tests grün; Prüflauf mit
+  `beispieldaten.txt` ohne Fehler, 12 Bestandsposten, Summe 1907;
+  Gegenprobe mit zwei absichtlichen Fehlern machte 5 bzw. 1 Test rot.
+- **Übernommen als DEC:** offen
+- **Detail:** [[REC-001 — Pruefergebnisse zum Stand von Commit 2eb6d29]]

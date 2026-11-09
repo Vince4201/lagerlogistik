@@ -115,8 +115,9 @@ _(Register: [[Agent-Berichte]])_
 
 ## research-artifact
 
-_(wird beim Recherche-Ingest angelegt; Register:
-[[Rechercheartefakte]])_
+- **[[REC-001 — Pruefergebnisse zum Stand von Commit 2eb6d29]]** — alte Prüfergebnisse aus der Git-Historie: 42 Tests grün, Prüflauf 12 Posten, Summe 1907.
+
+_(Register: [[Rechercheartefakte]])_
 
 ## member
 
