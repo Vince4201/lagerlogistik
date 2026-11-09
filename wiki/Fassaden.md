@@ -104,5 +104,5 @@ Tabelle unten.
 | [[Aktenzeichen]] | Register aller Aktenzeichen | deaktiviert _(Vorfestlegung; Reaktivierung per Zuruf)_ | Basis |
 | [[Systemarchitektur]] | ARC-Register und Sollzustand (SP-1) — abgelöst durch [[Softwaresystemarchitektur]] | deaktiviert _(abgelöst, Wiki.md §11.4)_ | Prozess-mitgebracht (SP-1) |
 | [[Systemtest-Setup]] | Sollzustand der Prüfung (SP-1) — abgelöst durch [[Softwaresystemtest-Setup]] | deaktiviert _(abgelöst, Wiki.md §11.4)_ | Prozess-mitgebracht (SP-1) |
-| [[Contract-Index]] | CON-Register — aktiv nur beim Koordinator | deaktiviert _(Vorauswahl des SP-1-Steckbriefs; Rolle offen — Aktivierung bei Rolle Koordinator oder per Zuruf)_ | Prozess-mitgebracht (SP-1) |
+| [[Contract-Index]] | CON-Register — aktiv nur beim Koordinator | deaktiviert _(Vorauswahl des SP-1-Steckbriefs; Rolle Standalone gewählt (2026-11-09) — Aktivierung nur bei Rolle Koordinator oder per Zuruf)_ | Prozess-mitgebracht (SP-1) |
 | [[Geschaeftsbeziehungen]] | Kunden, Wettbewerber, Partner | deaktiviert _(Vorauswahl des SP-1-Steckbriefs; Reaktivierung per Zuruf)_ | Prozess-mitgebracht (SP-1) |
