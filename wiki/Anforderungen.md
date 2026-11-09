@@ -299,96 +299,96 @@ _(Einträge nach ID sortiert, chronologisch angelegt)_
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A03 (§Rahmen)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A03 (§Rahmen)
 
 ### REQ-004 — Ein Artikel kann an beliebig vielen Lagerorten liegen, und ein Lagerort kann beliebig viele Artikel enthalten
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A04 (§Lager und Bestand)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A04 (§Lager und Bestand)
 
 ### REQ-005 — Jede Bestandsänderung wird als Bewegung protokolliert, und der Bestand ergibt sich allein aus den Bewegungen
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A05 (§Lager und Bestand)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A05 (§Lager und Bestand)
 
 ### REQ-006 — Gebuchte Bewegungen werden nie geändert oder gelöscht; Fehler werden mit einer Korrekturbuchung ausgeglichen
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A06 (§Lager und Bestand)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A06 (§Lager und Bestand)
 
 ### REQ-007 — Mengen sind ganze Zahlen, die Einheit ist nur ein Anzeigetext
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A07 (§Lager und Bestand)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A07 (§Lager und Bestand)
 
 ### REQ-008 — Ein Wareneingang erhöht den Bestand eines Artikels an einem Ziel-Lagerort
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A08 (§Buchungen)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A08 (§Buchungen)
 
 ### REQ-009 — Ein Warenausgang senkt den Bestand eines Artikels an einem Quell-Lagerort
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A09 (§Buchungen)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A09 (§Buchungen)
 
 ### REQ-010 — Eine Umlagerung bringt eine Menge eines Artikels von einem Lagerort an einen anderen, ohne den Gesamtbestand zu ändern
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A10 (§Buchungen)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A10 (§Buchungen)
 
 ### REQ-011 — Bei einer Korrektur (Inventur) wird der gezählte Bestand an einem Lagerort übernommen und die Differenz zum gebuchten Bestand gebucht
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A11 (§Buchungen)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A11 (§Buchungen)
 
 ### REQ-012 — Die Menge einer Buchung ist größer als 0
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A12 (§Harte Regeln: „Ist eine
+- **Quelle:** [anforderungen.md](../anforderungen.md), A12 (§Harte Regeln: „Ist eine
   davon verletzt, wird die Buchung abgelehnt.“)
 
 ### REQ-013 — Gebucht wird nur auf Artikel und Lagerorte, die existieren und aktiv sind
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A13 (§Harte Regeln: „Ist eine
+- **Quelle:** [anforderungen.md](../anforderungen.md), A13 (§Harte Regeln: „Ist eine
   davon verletzt, wird die Buchung abgelehnt.“)
 
 ### REQ-014 — Entnommen wird höchstens, was an dem Lagerort liegt, sodass kein Lagerort negativ wird
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A14 (§Harte Regeln: „Ist eine
+- **Quelle:** [anforderungen.md](../anforderungen.md), A14 (§Harte Regeln: „Ist eine
   davon verletzt, wird die Buchung abgelehnt.“)
 
 ### REQ-015 — Bei einer Umlagerung sind Quelle und Ziel verschieden
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A15 (§Harte Regeln: „Ist eine
+- **Quelle:** [anforderungen.md](../anforderungen.md), A15 (§Harte Regeln: „Ist eine
   davon verletzt, wird die Buchung abgelehnt.“)
 
 ### REQ-016 — Eine Korrektur braucht eine Begründung
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A16 (§Harte Regeln: „Ist eine
+- **Quelle:** [anforderungen.md](../anforderungen.md), A16 (§Harte Regeln: „Ist eine
   davon verletzt, wird die Buchung abgelehnt.“)
 
 ### REQ-017 — Jeder Artikel hat einen Mindestbestand, der für seinen Gesamtbestand über alle Lagerorte gilt; 0 heißt keine Überwachung
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A17 (§Mindestbestand: „Eine
+- **Quelle:** [anforderungen.md](../anforderungen.md), A17 (§Mindestbestand: „Eine
   weiche Regel: Die Buchung wird ausgeführt, danach kommt eine
   Warnung.“)
 
@@ -396,7 +396,7 @@ _(Einträge nach ID sortiert, chronologisch angelegt)_
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A18 (§Mindestbestand: „Eine
+- **Quelle:** [anforderungen.md](../anforderungen.md), A18 (§Mindestbestand: „Eine
   weiche Regel: Die Buchung wird ausgeführt, danach kommt eine
   Warnung.“)
 
@@ -404,7 +404,7 @@ _(Einträge nach ID sortiert, chronologisch angelegt)_
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A19 (§Mindestbestand: „Eine
+- **Quelle:** [anforderungen.md](../anforderungen.md), A19 (§Mindestbestand: „Eine
   weiche Regel: Die Buchung wird ausgeführt, danach kommt eine
   Warnung.“)
 
@@ -412,7 +412,7 @@ _(Einträge nach ID sortiert, chronologisch angelegt)_
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A20 (§Mindestbestand: „Eine
+- **Quelle:** [anforderungen.md](../anforderungen.md), A20 (§Mindestbestand: „Eine
   weiche Regel: Die Buchung wird ausgeführt, danach kommt eine
   Warnung.“)
 
@@ -420,79 +420,79 @@ _(Einträge nach ID sortiert, chronologisch angelegt)_
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A21 (§Stammdaten)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A21 (§Stammdaten)
 
 ### REQ-022 — Ein Lagerort hat einen Code (z. B. A-01-03) und eine optionale Bezeichnung
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A22 (§Stammdaten)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A22 (§Stammdaten)
 
 ### REQ-023 — Nummern und Codes sind eindeutig, unveränderlich und werden in Großbuchstaben gespeichert
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A23 (§Stammdaten)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A23 (§Stammdaten)
 
 ### REQ-024 — Artikel und Lagerorte lassen sich löschen, solange es zu ihnen keine Bewegungen gibt
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A24 (§Stammdaten)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A24 (§Stammdaten)
 
 ### REQ-025 — Gibt es Bewegungen, lassen sich Artikel und Lagerorte nur noch deaktivieren, und das nur, wenn sie keinen Bestand haben
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A25 (§Stammdaten)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A25 (§Stammdaten)
 
 ### REQ-026 — Deaktivierte Artikel und Lagerorte lassen sich nicht bebuchen, aber wieder aktivieren
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A26 (§Stammdaten)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A26 (§Stammdaten)
 
 ### REQ-027 — Das Programm zeigt je Artikel den Gesamtbestand und die Verteilung auf die Lagerorte
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A27 (§Auswertungen)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A27 (§Auswertungen)
 
 ### REQ-028 — Das Programm zeigt je Lagerort, welche Artikel in welcher Menge dort liegen
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A28 (§Auswertungen)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A28 (§Auswertungen)
 
 ### REQ-029 — Das Programm listet alle Artikel unter dem Mindestbestand mit ihrer Fehlmenge
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A29 (§Auswertungen)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A29 (§Auswertungen)
 
 ### REQ-030 — Das Programm zeigt das Bewegungsprotokoll, filterbar nach Artikel und Lagerort
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A30 (§Auswertungen)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A30 (§Auswertungen)
 
 ### REQ-031 — Falsche Eingaben werden erneut abgefragt
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A31 (§Bedienung)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A31 (§Bedienung)
 
 ### REQ-032 — Eine leere Eingabe bricht den laufenden Vorgang ab
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A32 (§Bedienung)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A32 (§Bedienung)
 
 ### REQ-033 — Mit `?` lässt sich eine Auswahlliste anzeigen
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A33 (§Bedienung)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A33 (§Bedienung)
 
 ## Nicht-funktional
 
@@ -502,13 +502,13 @@ _(Einträge nach ID sortiert, chronologisch angelegt)_
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A01 (§Rahmen)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A01 (§Rahmen)
 
 ### REQ-002 — Die Lagerverwaltung wird im Terminal über Menüs bedient
 
 - **Status:** umgesetzt
 - **Datum:** 2026-11-09
-- **Quelle:** `anforderungen.md`, A02 (§Rahmen)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A02 (§Rahmen)
 
 ## Fehlerbehebungen
 

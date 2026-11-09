@@ -79,4 +79,4 @@ _(Rollen alphabetisch sortiert)_
 - **Kurzbeschreibung:** ein Benutzer an einem Rechner — die
   Lagerverwaltung ist eine Einzelplatz-Anwendung.
 - **Verwendet in:** REQ-001 ([[Anforderungen]])
-- **Quelle:** `anforderungen.md`, A01 (§Rahmen)
+- **Quelle:** [anforderungen.md](../anforderungen.md), A01 (§Rahmen)
