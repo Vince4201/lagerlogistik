@@ -16,12 +16,14 @@ keine `CLAUDE.md`; die alte liegt als `CLAUDE-vorgefunden.md`.
 
 ## Nächste Schritte
 
-- Phase 4 Stufe 1: Prüfer 1 (Claude Sonnet 5.5, Subagent mit frischem
-  Kontext) prüft die Migration; Bericht als REP in [[Agent-Berichte]].
-- Phase 4 Stufe 1: Prüfer 2 (Codex, zweites Modell) prüft unabhängig —
-  braucht `codex login` durch den Anwender.
-- Danach Befunde nacharbeiten, Gesamt-Annahme durch den Anwender
-  (DEC-018), Phase 5 (Restfragen, neue Instruktionsdatei).
+- Erledigt: Prüfer 1 (Claude Sonnet 5.5) hat geprüft — REP-001, Ampel
+  gelb, 15 Befunde, davon 5 entscheidungsbedürftig ([[Agent-Berichte]]).
+- Phase 4 Stufe 1: Prüfer 2 (Codex, zweites Modell) prüft unabhängig mit
+  demselben Auftragswortlaut wie REP-001 §Auftrag, aber ohne Zugriff auf
+  REP-001 — braucht `codex login` durch den Anwender.
+- Danach beide Berichte nacharbeiten, Kurz-Re-Check beider Prüfer
+  (höchstens drei Runden), Gesamt-Annahme durch den Anwender (DEC-018),
+  Phase 5 (Restfragen, neue Instruktionsdatei).
 
 ## Blockaden/Risiken
 
