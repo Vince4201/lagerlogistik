@@ -79,14 +79,19 @@ eine gemeinsame Basisklasse. Jeder Test beginnt im Namen
 (`@DisplayName`) mit der Nummer der Anforderung, die er
 prüft (A01 bis A33, im Wiki REQ-001 bis REQ-033); die
 Tests decken A01 bis A33 ab, jede mit mindestens einem
-Test. Jeder Test arbeitet auf einer eigenen, frischen
-Datenbankdatei.
+Test. Neue Tests beginnen mit der REQ-Nummer
+(`REQ-034 …`), die bestehenden behalten `A..`. Jeder Test
+arbeitet auf einer eigenen, frischen Datenbankdatei.
 
 **Feststellung:** Isolierte Unit-Tests ohne Datenbank gibt
 es nicht. Alle Testklassen erben von der Testbasis und
 arbeiten auf einer echten SQLite-Datei, und jeder Test
-prüft eine Anforderung. Im Register [[Testfaelle]] stehen
-sie deshalb als Systemtests, je Testmethode ein Testfall.
+prüft eine Anforderung. Nach der Projekt-Regel
+[[Testname-mit-Anforderungsnummer]] steht jeder Test als
+Testfall im Register [[Testfaelle]]: die 33 Tests der
+Datenbank- und Serviceklassen als `integration`
+(TEST-001 bis TEST-033), die 9 Tests über die Konsole als
+`system` (TEST-034 bis TEST-042).
 
 | Testklasse | Verantwortungsbereich | Anforderungen | Tests | Testfälle |
 |---|---|---|---|---|
@@ -124,13 +129,15 @@ Testquellen unter `src/test/java/` (Basisklasse
 
 ## Integrationstests
 
-**Feststellung:** Eine eigene Stufe Integrationstests gibt
-es nicht, und die Prüfung braucht keine externen Dienste.
-Das Zusammenspiel mit der Datenbank prüfen die
-automatischen Tests mit, denn jeder Test läuft auf einer
-echten SQLite-Datei; `DatenbankTest` prüft das Schema
-selbst. Die Datenbank ist eine lokale Datei, ein Server
-ist nicht nötig (TEST-001).
+**Feststellung:** Integrationstests sind die 33 Tests der
+Klassen `DatenbankTest`, `BuchungenTest`,
+`MindestbestandTest`, `StammdatenTest` und
+`AuswertungenTest` (TEST-001 bis TEST-033): Sie prüfen
+`LagerService` zusammen mit einer echten SQLite-Datei,
+`DatenbankTest` das Schema selbst. Eine eigene Stufe mit
+externen Diensten gibt es nicht und braucht es nicht: Die
+Datenbank ist eine lokale Datei, ein Server ist nicht
+nötig (TEST-001).
 
 _Quelle:_ Testquellen unter `src/test/java/`
 (`LagerTestBasis`, `DatenbankTest`).
@@ -192,9 +199,17 @@ sqlite3 test.db "SELECT * FROM bestand"
 ```
 
 - **Erwartet:** Der Lauf geht ohne Fehler durch. Die
-  zweite Zeile zeigt danach den Bestand (View `bestand`);
-  ein Soll-Bestand ist nicht festgehalten.
+  zweite Zeile zeigt danach den Bestand (View `bestand`):
+  12 Posten mit der Summe 1907, zu prüfen mit
+  `sqlite3 test.db "SELECT COUNT(*), SUM(menge) FROM bestand"`
+  → `12|1907`. Referenz aus der Nachricht von Commit
+  `2eb6d29`, als Nachweis abgelegt in
+  [[REC-001 — Pruefergebnisse zum Stand von Commit 2eb6d29]];
+  am 2026-11-09 mit der vorhandenen JAR nachgeprüft (Code
+  unverändert seit `2eb6d29`).
 
 _Quelle:_ `spezifikation.md` §Prüfen; Inhalt ausgezählt
 aus `beispieldaten.txt`; Prüfkriterium „läuft ohne Fehler
-durch“ aus `CLAUDE-vorgefunden.md` (Abschnitt Commits).
+durch“ aus `CLAUDE-vorgefunden.md` (Abschnitt Commits);
+Soll-Ergebnis aus Commit `2eb6d29`, nachgetragen am
+2026-11-09 nach Prüfbericht REP-001 (Befund 1).
