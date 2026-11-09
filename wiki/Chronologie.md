@@ -29,7 +29,38 @@ type: timeline
 
 ---
 
-**Bearbeitungsstand:** _(vom Agenten beim Ingest und laufend
-gepflegt)_
+**Bearbeitungsstand:** 2026-11-09 — Migration Phase 3:
+Git-Historie bis Commit `2eb6d29` verdichtet übernommen; die
+Commit-Nachrichten bleiben der Nachweis
+([[Nachschlagen-in-der-Git-Historie]]). Daten nur aus der
+Git-Historie.
 
-_(vom Agenten beim ersten Ingest gefüllt)_
+## 2026-11-02
+
+- Lagerverwaltung Version 1 unter Versionskontrolle gestellt,
+  Stand wie in der damaligen `KONZEPT.md` beschrieben:
+  menügeführte Terminal-Anwendung in Java 21 mit SQLite,
+  Bestand als View über dem Bewegungsprotokoll, Bewegungen per
+  Trigger unveränderlich; die Instruktionsdatei `CLAUDE.md`
+  legt die Arbeit mit Git fest (Commit `3b6f6b4`)
+  → [[DEC-004 Bestand nur aus den Bewegungen berechnet]]
+- Festlegung „nur `KONZEPT.md` als Konzeptdokument“ als
+  Missverständnis zurückgenommen; `KONZEPT.md` in die
+  Dokumentenkette `anforderungen.md` →
+  `datenmodell-und-ablaeufe.md` → `spezifikation.md`
+  aufgeteilt, ohne fachliche Änderung (Commits `f3b2bd4`,
+  `e11a977`, `0ef4466`)
+- Git-Regeln in `CLAUDE.md` an das Kursskript „Arbeiten mit
+  KI-Agenten“ angeglichen: Commit je Zug, Präfix-Katalog,
+  Prüfung vor Code-Commits, Abschluss-Commit, kein Push ohne
+  Anweisung, kein Umschreiben der Geschichte (Commit
+  `1013075`) → [[Keine-Umschreibung-der-Git-Historie]]
+- Anforderungen in 33 nummerierte Sätze A01 bis A33 zerlegt,
+  die Nummern bleiben seitdem fest (Commit `e9aa365`)
+- Datenmodell um den Ablauf Auswerten ergänzt, die Abschnitte
+  verweisen auf die Anforderungsnummern (Commit `7de2209`)
+- Spezifikation nach Befehlen gegliedert, ohne fachliche
+  Änderung (Commit `b962fc1`)
+- JUnit-Tests für alle Anforderungen A01 bis A33 eingeführt;
+  sie laufen seitdem bei jedem Build mit (Commit `2eb6d29`)
+  → [[DEC-011 Tests mit JUnit Jupiter ueber Surefire]]
