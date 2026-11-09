@@ -30,12 +30,25 @@ active: true   # kann nicht deaktiviert werden — Facts ist Pflicht-Fassade (ma
 
 ---
 
-**Bearbeitungsstand:** _(beim Init gesetzt)_
+**Bearbeitungsstand:** 2026-11-09 — §1 in der Migration aus den vorgefundenen Dateien gefüllt (Bootstrap Facts); §2 und §3 noch leer.
 
 ## 1. Projekteinstieg
 
-_(beim Init aus User-Angaben gefüllt. Kurz und mit
-Wikilinks auf Hauptbeteiligte und zentrale Themen.)_
+Terminal-Lagerverwaltung für einen Benutzer an einem Rechner, in
+Java 21 mit SQLite. Sie bucht Wareneingang, Warenausgang, Umlagerung
+und Korrektur/Inventur als unveränderliche Bewegungen und berechnet
+den Bestand daraus; dazu Stammdaten (Artikel, Lagerorte), eine
+Warnung beim Unterschreiten des Mindestbestands und vier
+Auswertungen. Bedienung über Menüs im Terminal, Start mit
+`./lager.sh`.
+
+Der Stand wurde am 2026-11-09 aus der Dokumentenkette
+(`anforderungen.md`, `datenmodell-und-ablaeufe.md`,
+`spezifikation.md`), dem Quelltext und den JUnit-Tests ins wiki/
+übernommen; erste Marke ist `Uebernahme-2026-11-09`
+([[Zielmarken]]). Einstieg: [[Mission Statement]],
+[[Anforderungen]], [[Funktionsbeschreibungen]],
+[[Softwaresystemarchitektur]], [[Testfaelle]].
 
 ## 2. Allgemeine Fakten
 
