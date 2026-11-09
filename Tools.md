@@ -33,9 +33,13 @@ nutzbar; Stand 2026-11-09.)_
   Prüfer 1 der Migration ist Claude Sonnet 5.5 als Subagent
 
 ### Zweites Modell für Prüfungen
-- **Werkzeug:** Codex CLI (OpenAI-Modell), installiert; am 2026-11-09 nicht
-  angemeldet (`codex login status`: „Not logged in“) — Anmeldung durch den
-  Anwender mit `codex login`
+- **Werkzeug:** Codex CLI 0.160.0 (Modell gpt-6-luna), am 2026-11-09 vom
+  Anwender angemeldet (`codex login`, über ChatGPT)
+- **Aufruf im clawbook-Container:** Die Codex-Sandbox läuft hier nicht
+  (bubblewrap fehlt, unprivilegierte Namensräume gesperrt). Gewählt am
+  2026-11-09: Prüfläufe mit `codex exec --dangerously-bypass-approvals-and-sandbox`
+  in einem Klon des Repos, nie im Projektordner; Codex hat dabei die Rechte
+  des Benutzers
 - **Ersatzweg (nur ohne Werkzeug):** Ein-Modell-Weg (`Reviewmuster.md` §2
   Schleife 2, Fallback) — dasselbe Modell prüft in frischem Kontext, die
   Schwäche steht im Bericht und in der Freigabe
@@ -70,8 +74,7 @@ nutzbar; Stand 2026-11-09.)_
 
 ## Code-Review-Werkzeuge
 
-- **Wahl:** Codex CLI vorgesehen (2026-11-09), noch nicht angemeldet; bis
-  dahin der Ersatzweg aus §Prüf-Werkzeuge
+- **Wahl:** Codex CLI (2026-11-09), Aufruf wie in §Prüf-Werkzeuge
 
 ## Peer-Agenten: Start und Transport
 
