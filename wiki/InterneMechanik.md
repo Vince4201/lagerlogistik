@@ -194,9 +194,11 @@ kommt beim Init hinzu)_
 
 - **Typ:** internal-rule
 - **Kurzform:** jede Anforderung hat mindestens einen
-  JUnit-Test, dessen Name mit ihrer Nummer beginnt; eine
-  neue Anforderung bringt ihren Test mit (Bestand aus
-  `CLAUDE-vorgefunden.md`).
+  JUnit-Test, dessen Name mit ihrer Nummer beginnt (neue
+  Tests mit `REQ-NNN`); eine neue Anforderung bringt ihren
+  Test mit (Bestand aus `CLAUDE-vorgefunden.md`). Jeder
+  dieser Tests ist ein Testfall, Testart `integration` oder,
+  über die Konsole, `system` (ergänzt 2026-11-09).
 
 ### [[Keine-Umschreibung-der-Git-Historie]]
 

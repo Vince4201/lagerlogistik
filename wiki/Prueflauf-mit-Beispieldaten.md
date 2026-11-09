@@ -18,7 +18,10 @@ Ort).
 2. Ergebnis ansehen: `sqlite3 test.db "SELECT * FROM bestand"`
    ([[Datenbank-mit-sqlite3-ansehen]]).
 
-Erwartet: Der Lauf geht ohne Fehler durch.
+Erwartet: Der Lauf geht ohne Fehler durch, und `bestand`
+hat danach 12 Posten mit der Summe 1907
+(`SELECT COUNT(*), SUM(menge) FROM bestand`); Referenz:
+Commit `2eb6d29` und [[REC-001 — Pruefergebnisse zum Stand von Commit 2eb6d29]].
 
 **Wahl-Optionen:**
 
@@ -38,7 +41,9 @@ nicht ([[Berichten-statt-Blockieren]]).
 Bestand aus `spezifikation.md` §Prüfen,
 `CLAUDE-vorgefunden.md` §Commits („läuft ohne Fehler
 durch“), `.gitignore` (Kommentar zur Testdatenbank) und
-Commit `3b6f6b4`.
+Commit `3b6f6b4`. Das Soll-Ergebnis (12 Posten, Summe 1907)
+stammt aus der Nachricht von Commit `2eb6d29`; nachgetragen am
+2026-11-09 nach Prüfbericht REP-001 (Befund 1).
 
 ## Bezüge
 
