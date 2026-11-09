@@ -16,16 +16,16 @@ keine `CLAUDE.md`; die alte liegt als `CLAUDE-vorgefunden.md`.
 
 ## Nächste Schritte
 
-- Erledigt: Prüfer 1 (Claude Sonnet 5.5) hat geprüft — REP-001, Ampel
-  gelb, 15 Befunde, davon 5 entscheidungsbedürftig ([[Agent-Berichte]]).
-- Phase 4 Stufe 1: Prüfer 2 (Codex, zweites Modell) prüft unabhängig mit
-  demselben Auftragswortlaut wie REP-001 §Auftrag, aber ohne Zugriff auf
-  REP-001 — braucht `codex login` durch den Anwender.
-- Danach beide Berichte nacharbeiten, Kurz-Re-Check beider Prüfer
-  (höchstens drei Runden), Gesamt-Annahme durch den Anwender (DEC-018),
-  Phase 5 (Restfragen, neue Instruktionsdatei).
+- Erledigt: Phase 4 Stufe 1, Runde 1 — REP-001 (Claude Sonnet 5.5, gelb,
+  15 Befunde) und REP-002 (Codex gpt-6-luna, gelb, 1 Befund) in
+  [[Agent-Berichte]].
+- Entscheidungen des Anwenders zu den entscheidungsbedürftigen Befunden
+  einholen (Testart, DEC-Dopplung mit REQ, Zeile in §Komponenten mit
+  Repo-Name, Zielumgebung, Nachweis der alten Prüfergebnisse).
+- Danach alle Befunde nacharbeiten, Commit, Kurz-Re-Check beider Prüfer
+  (höchstens drei Runden), Gesamt-Annahme (DEC-018), Phase 5.
 
 ## Blockaden/Risiken
 
-- Codex ist nicht angemeldet (Stand 2026-11-09); ohne zweites Modell
-  bleibt nur der Ersatzweg Ein-Modell-Weg (`Tools.md`).
+- Codex läuft im Container nur ohne Sandbox; Prüfläufe deshalb nur in
+  einem Klon des Repos (`Tools.md` §Prüf-Werkzeuge).
