@@ -66,7 +66,8 @@ type: agent-report-log
 ---
 
 **Bearbeitungsstand:** 2026-11-09 — REP-001 und REP-002 abgelegt
-(Absicherungs-Review der Migration, Prüfer 1 und 2, Runde 1).
+(Absicherungs-Review der Migration, Prüfer 1 und 2, Runde 1), dazu
+REP-003 und REP-004 (Kurz-Re-Check, Runde 2, beide grün).
 
 Chronologische Liste.
 
@@ -96,3 +97,23 @@ _(chronologisch nach ID)_
   quellentreu; ein entscheidungsbedürftiger Befund: die pauschale
   Testart `system` der 42 TEST (deckt sich mit REP-001 Befund 9).
 - **Detail:** [[REP-002 — Absicherungs-Review Migration Pruefer 2]]
+
+### REP-003 — Kurz-Re-Check Migration, Prüfer 1
+
+- **Modell:** claude-sonnet-5-5 — **Bau:** claude-opus-5-5 — **Runde:** 2 — **Datum:** 2026-11-09 — **Ampel:** gruen
+- **Anlass:** Phase 4 Stufe 1 der Wissens-Migration, Kurz-Re-Check der
+  Nacharbeit (Commits `6653def..857e33b`); Vorgänger REP-001.
+- **Kern-Ergebnis:** alle Befunde der Runde 1 behoben, die
+  Anwender-Entscheide wie beschlossen umgesetzt; keine neuen Befunde;
+  Lint ohne Fehler.
+- **Detail:** [[REP-003 — Kurz-Re-Check Migration Pruefer 1]]
+
+### REP-004 — Kurz-Re-Check Migration, Prüfer 2
+
+- **Modell:** gpt-6-luna — **Bau:** claude-opus-5-5 — **Runde:** 2 — **Datum:** 2026-11-09 — **Ampel:** gruen
+- **Anlass:** Phase 4 Stufe 1 der Wissens-Migration, Kurz-Re-Check der
+  Nacharbeit (Commits `6653def..857e33b`) über die Codex CLI im Klon;
+  Vorgänger REP-002.
+- **Kern-Ergebnis:** Testart, REC-001, Soll des Prüflaufs und die
+  übrigen Nacharbeiten konsistent; keine Befunde; Lint ohne Fehler.
+- **Detail:** [[REP-004 — Kurz-Re-Check Migration Pruefer 2]]

@@ -110,6 +110,8 @@ _(Register: [[Entscheidungen]])_
 
 - **[[REP-001 — Absicherungs-Review Migration Pruefer 1]]** — Absicherungs-Review der Migration, Prüfer 1, Ampel gelb.
 - **[[REP-002 — Absicherungs-Review Migration Pruefer 2]]** — Absicherungs-Review der Migration, Prüfer 2 (Codex), Ampel gelb.
+- **[[REP-003 — Kurz-Re-Check Migration Pruefer 1]]** — Kurz-Re-Check der Nacharbeit, Prüfer 1, Ampel grün.
+- **[[REP-004 — Kurz-Re-Check Migration Pruefer 2]]** — Kurz-Re-Check der Nacharbeit, Prüfer 2 (Codex), Ampel grün.
 
 _(Register: [[Agent-Berichte]])_
 
